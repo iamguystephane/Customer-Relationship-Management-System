@@ -1,0 +1,317 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+/* nav bar */
+.nav
+{
+    display: flex;
+}
+.main-nav-bar
+{
+    background-color: rgb(0, 0, 0);
+    width: 10%;
+    height: 100%;
+    
+}
+.main-nav-bar a
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    line-height: 7.5;
+    text-align: center;
+}
+.secondary-nav
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+/* dashboard */
+.contact
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10%;
+    margin-bottom: -100%;
+}
+.search-bar
+{
+    position: relative;
+    height: 6vh;
+    display: flex;
+}
+.nav-search-bar
+{
+    outline: 0;
+    padding: 10px;
+    width: 450px;
+    height: 25px;
+    padding-left: 2em;
+    border: 0;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.616);
+    color: white;
+}
+
+.nav-search-bar::placeholder
+{
+    color: white;
+}
+#search-icon
+{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    /* transform: rotate(90deg); */
+    cursor: pointer;
+    color: white;
+}
+.nav-search
+{
+    text-transform: uppercase;
+    padding: 4px;
+    border: 0;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user
+{
+    display: flex;
+    gap: 10px;
+}
+.administrator
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#user-icon
+{
+    font-size: 20px;
+}
+#angle-down-icon
+{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+}
+.dashboard-square
+{
+    margin-left: 17%;
+    margin-top: -50px;
+    gap: 50px;
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+.box
+{
+    height: 150px;
+    width: 200px;
+    background-color: rgb(66, 101, 107);
+    margin-top: -40%;
+    position: relative;
+    font-weight: 600;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(195, 0, 255));
+    background-size: cover;
+    border-radius: 10px;
+}
+.for-job-uncompleted
+{
+    background-image: linear-gradient(rgb(206, 93, 18), rgb(14, 12, 11));
+}
+.for-job-completed
+{
+    background-image: linear-gradient(rgb(16, 206, 231), rgb(147, 150, 189));
+}
+.for-customer-requests
+{
+    background-image: linear-gradient(rgb(236, 21, 21)0, rgb(0, 0, 0));
+}
+.price
+{
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    color: white;
+}
+#arrow-up
+{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+}
+
+
+.revenue
+{
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    color: white;
+}
+
+.view-revenue
+{
+    position: absolute;
+    bottom: -17px;
+    left: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+#arrow-right
+{
+    position: absolute;
+    bottom: -16px;
+    right: 40px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+.lowerbox
+{
+    height: 20px;
+    width: 100%;
+    background-color: rgb(82, 70, 70);
+    margin-top: 150px;
+    border-radius: 10px;
+}
+.uncompletedJobs
+{
+    font-size: 40px;
+    left: 95px;
+}
+.completedJobs
+{
+    font-size: 40px;
+    left: 80px;
+}
+.request-count
+{
+    font-size: 40px;
+    left: 80px;
+}
+.uncompletedjob
+{
+    width: 100%;
+    left: -10px;
+}
+.jobuncompleted
+{
+    left: 60px;
+}
+.jobcompleted
+{
+    left: 60px;
+}
+.customer-requests
+{
+    left: 62px;
+}
+#arrow-uncompletedjob
+{
+    position: absolute;
+    bottom: -16px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+#arrow-completedjob
+{
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+#view_request
+{
+    margin-left: 14%;
+    margin-top: -35%;
+    background-color: black;
+    width: 80vw;
+    height: 50vh;
+    position: relative;
+    z-index: 1;
+    display: none;
+}
+table, th, td
+{
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 80vw;
+}
+
+.accept, .decline, .details
+{
+    margin-left: 10%;
+    margin-top: 1%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.back
+{
+    margin-left: 1%;
+}
+
+.progress-main-section
+{
+    margin-left: 10%;
+    margin-top: -35%;
+    
+}
+.image-comment
+{
+    display: flex;
+    gap: 80px;
+}
+.image-comment textarea
+{
+    margin-top: 75px;
+}
+.image-comment button
+{
+    width: 60px;
+    height: 40px;
+}
