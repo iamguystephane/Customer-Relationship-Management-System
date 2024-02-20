@@ -9,9 +9,9 @@
         <div id = "container">
             <div class = "nav">
                 <div class = "main-nav-bar">
-                    <a href = "admin dashboard.html"> Dashboard </a>
-                    <a href = "contact.html"> Contacts </a>
-                    <a href = ""> Progress </a>
+                    <a href = "admin_dashboard.php"> Dashboard </a>
+                    <a href = "contact.php"> Contacts </a>
+                    <a href = "progress.php"> Progress </a>
                     <a href = ""> Reports </a>
                     <a href = ""> Settings </a>
                 </div>

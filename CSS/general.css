@@ -19,7 +19,6 @@ body
     background-color: rgb(0, 0, 0);
     width: 10%;
     height: 100%;
-    
 }
 .main-nav-bar a
 {
@@ -64,7 +63,21 @@ body
     background-color: rgba(0, 0, 0, 0.616);
     color: white;
 }
-
+#notification-bell
+{
+    width: 25px;
+    height: 25px;
+    margin-left: 80px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+#notification-bell:hover
+{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+}
 .nav-search-bar::placeholder
 {
     color: white;
@@ -264,10 +277,28 @@ body
     margin-top: -35%;
     background-color: black;
     width: 80vw;
-    height: 50vh;
+    height: fit-content;
+    position: relative;
+    /* z-index: 1; */
+    display: none;
+    padding: 10px;
+}
+#uncompleted-project
+{
+    margin-left: 14%;
+    margin-top: -35%;
+    background-color: black;
+    width: 80vw;
+    height: fit-content;
     position: relative;
     z-index: 1;
     display: none;
+    padding: 10px;
+}
+h3
+{
+    color: white;
+    text-align: center;
 }
 table, th, td
 {
@@ -276,7 +307,9 @@ table, th, td
     color: white;
     border-collapse: collapse;
     padding: 10px;
-    width: 80vw;
+    width: 1000px;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .accept, .decline, .details
@@ -294,24 +327,78 @@ table, th, td
 {
     margin-left: 1%;
 }
-
+/* This is the progress bar section */
 .progress-main-section
 {
     margin-left: 10%;
-    margin-top: -35%;
-    
+    margin-top: -46%;
+}
+.add-image-comment
+{
+    padding: 5px;
+    margin-top: 10px;
+    outline: 0px;
+    border-radius: 5px;
+    width: 350px;
 }
 .image-comment
 {
-    display: flex;
-    gap: 80px;
+    display: block;
 }
-.image-comment textarea
+.submit-comment-btn
 {
-    margin-top: 75px;
+    margin-top: 10px;
+    padding: 4px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
-.image-comment button
+
+.image-comment-text
 {
-    width: 60px;
-    height: 40px;
+    margin-top: 10px;
+    margin-left: 135px;
+}
+.image
+{
+    width: 400px;
+    height: 300px;
+    /* border: 1px solid black; */
+    margin-top: -50px;
+    background-position: center;
+    background-size: cover;
+}
+.image-and-comment
+{
+    margin-top: 100px;
+}
+hr
+{
+    margin-top: 20px;
+}
+label
+{
+    display: block;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+#input-file
+{
+    display: none;
+}
+.finish-project-btn
+{
+    color: white;
+    background: black;
+    margin-left: 0px;
 }

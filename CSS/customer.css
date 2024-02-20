@@ -1,0 +1,257 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+/* nav bar */
+.nav
+{
+    display: flex;
+}
+.main-nav-bar
+{
+    background-color: rgb(0, 0, 0);
+    width: 10%;
+    height: 100%;
+}
+.main-nav-bar a
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    line-height: 12.5;
+    text-align: center;
+}
+.secondary-nav
+{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+.search-bar
+{
+    position: relative;
+    height: 6vh;
+    display: flex;
+}
+.nav-search-bar
+{
+    outline: 0;
+    padding: 10px;
+    width: 450px;
+    height: 25px;
+    padding-left: 2em;
+    border: 0;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.616);
+    color: white;
+}
+#notification-bell
+{
+    width: 25px;
+    height: 25px;
+    margin-left: 80px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+#notification-bell:hover
+{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+}
+.nav-search-bar::placeholder
+{
+    color: white;
+}
+#search-icon
+{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    /* transform: rotate(90deg); */
+    cursor: pointer;
+    color: white;
+}
+.nav-search
+{
+    text-transform: uppercase;
+    padding: 4px;
+    border: 0;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user
+{
+    display: flex;
+    gap: 10px;
+}
+.administrator
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#user-icon
+{
+    font-size: 20px;
+}
+#angle-down-icon
+{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+}
+.newproject
+{
+    position: absolute;
+    top: 23%;
+    left: 15%;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.main-section
+{
+    position: relative;
+    margin-left: 15%;
+    margin-top: -38%;
+    background-color: black;
+    height: 500px;
+    width: 1000px;
+    text-align: center;
+    display: none;
+    z-index: 1;
+}
+
+.main-section h2
+{
+    color: white;
+}
+.main-section input
+{
+    padding: 5px;
+    border-radius: 5px;
+    width: 50%;
+    outline: 0px;
+    margin-top: 5%;
+    border-radius: 7px;
+}
+.main-section textarea
+{
+    margin-top: 5%;
+    outline: 0;
+    border-radius: 14px;
+    padding: 10px;
+}
+.textareaspan
+{
+    position: absolute;
+    left: 15%;
+    bottom: 55%;
+    font-weight: 600;
+    color: white;
+}
+.inputspan
+{
+    position: absolute;
+    left: 25%;
+    top: 11%;
+    font-weight: 600;
+    color: white;
+}
+.project-name
+{
+    top: 27%;
+}
+.main-section button
+{
+    padding: 5px;
+    background-color: white;
+    color: black;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-right: 12%;
+    margin-top: 1%;
+    font-weight: bold;
+}
+#closeBtn
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    background: none;
+}
+#closeBtn:hover
+{
+    color: red;
+    background-color: white;
+    cursor: pointer;
+}
+.project-history
+{
+    margin-left: 10%;
+    margin-top: -25%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.createdProject
+{
+    width: fit-content;
+    height: fit-content;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+.createdProject button
+{
+    padding: 5px;
+    background: white;
+    border: 0;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+h3
+{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+hr
+{
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    width: 80%;
+    font-weight: 40px;
+}

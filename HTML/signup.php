@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
-    <form action = "../PHP/register.php" method = "POST">
+    <form action = "" method = "POST">
         <div id = "container">
             <div class = "hero">
                 <h2> Registration </h2>
@@ -50,5 +50,36 @@
             </div>
         </div>
     </form>
+
+
+    <?php
+        include_once("../PHP/databaseconnect.php");
+        if(isset($_POST["submit"]))
+        {
+            $Name = $_POST["name"];
+            $Email = $_POST["email"];
+            $Tel = $_POST["tel"];
+            $Password = $_POST["password"];
+            $Gender = $_POST["gender"];
+            $Country = $_POST["country"];
+            $CountryCode = $_POST["country-code"];
+            $Address = $_POST["addy"];
+
+            $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password')";
+            $result = mysqli_query($conn, $sql);
+            if($result)
+            {
+                echo 'Account successfully created';
+                $sql = "INSERT INTO `login` VALUES ('$Name', '$Password')";
+                $result = mysqli_query($conn, $sql);
+            }
+            else
+            {
+                die ("Account could not be created".mysqli_errno($conn));
+            }
+        }
+    ?>
+
+
 </body>
 </html>

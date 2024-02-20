@@ -9,9 +9,9 @@
         <div id = "container">
             <div class = "nav">
                 <div class = "main-nav-bar">
-                    <a href = "admin dashboard.html"> Dashboard </a>
-                    <a href = "contact.html"> Contacts </a>
-                    <a href = "progress.html"> Progress </a>
+                    <a href = "admin_dashboard.php"> Dashboard </a>
+                    <a href = "contact.php"> Contacts </a>
+                    <a href = "progress.php"> Progress </a>
                     <a href = ""> Reports </a>
                     <a href = ""> Settings </a>
                 </div>
@@ -28,12 +28,28 @@
             </div>
             <div class = "progress-main-section">
                 <div class = "image-comment">
-                    <img src = "../Images/image for box 1.jpg" width = "300px" height = "300px">
-                    <div class = "comment-and-button">
-                        <input type = "file" class = "image-comment-text">
-                    <button type = "button" class = "image-text-button"> POST </button>
+                    <div class = "image-and-comment">
+                        <div class = "image"></div>
+                        <p class = "image-comment-goes-here"></p>
+                        <input type = "text" class = "add-image-comment" placeholder = "add comment to image">
+                        <button type = "submit" class = "submit-comment-btn" onclick = "addCommentToImage()"> Add </button>
+                        <p>
+                            <label for = "input-file" class = "image-comment-text"> Upload Image </label>
+                            <input type = "file" id = "input-file" accept = "image/png, image/jpeg, image/jpg">
+                        </p>
                     </div>
+                    <hr>
                 </div>
+                <form method = "POST">
+                    <button type = "submit" class = "decline finish-project-btn" name = "submitproject"><a href = "finish.php"> Finish </button>
+                </form>
+                <style>
+                    a
+                    {
+                        text-decoration: none;
+                        color: white;
+                    }
+                </style>
             </div>
         </div>
         <script src = "../JS/all.js"></script>

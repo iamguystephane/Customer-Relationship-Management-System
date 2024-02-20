@@ -58,6 +58,22 @@ body
     position: relative;
     height: 6vh;
     display: flex;
+    margin-left: 25%;
+}
+#notification-bell
+{
+    width: 25px;
+    height: 25px;
+    margin-left: 80px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+#notification-bell:hover
+{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
 }
 .nav-search-bar
 {
