@@ -22,7 +22,7 @@
                     </div>
                     <div class = "user">
                         <i class = "fa-solid fa-user" id = "user-icon"></i><span class = "administrator"> Administrator </span>
-                        <i class = "fa-solid fa-angle-down" id = angle-down-icon></i>
+                        <i class = "fa-solid fa-angle-down" id = "angle-down-icon" onclick = "logout()"></i>
                     </div>
                 </div>
             </div>
@@ -31,42 +31,29 @@
                     <th> ID </th>
                     <th> Name </th>
                     <th> Country </th>
-                    <th> City </th>
+                    <th> Email </th>
                     <th> Address </th>
                     <th> Tel </th>
                 </tr>
-                <tr>
-                    <td onclick = "updateRecord()"> 1 </td>
-                    <td onclick = "updateRecord()"> John Doe </td>
-                    <td onclick = "updateRecord()"> America </td>
-                    <td onclick = "updateRecord()"> California </td>
-                    <td onclick = "updateRecord()"> Los Angeles </td>
-                    <td onclick = "updateRecord()"> 012 12121412 </td>
-                </tr>
-                <tr>
-                    <td onclick = "updateRecord()"> 2 </td>
-                    <td onclick = "updateRecord()"> Guy Stephane </td>
-                    <td onclick = "updateRecord()"> Cameroon </td>
-                    <td onclick = "updateRecord()"> Yaounde </td>
-                    <td onclick = "updateRecord()"> Mendong </td>
-                    <td onclick = "updateRecord()"> 672280977 </td>
-                </tr>
-                <tr>
-                    <td onclick = "updateRecord()"> 3 </td>
-                    <td onclick = "updateRecord()"> Rostand Bright </td>
-                    <td onclick = "updateRecord()"> Cameroon </td>
-                    <td onclick = "updateRecord()"> Bamenda </td>
-                    <td onclick = "updateRecord()"> City Chemist </td>
-                    <td onclick = "updateRecord()"> 674536434 </td>
-                </tr>
-                <tr>
-                    <td onclick = "updateRecord()"> 4 </td>
-                    <td onclick = "updateRecord()"> Marry Anne </td>
-                    <td onclick = "updateRecord()"> USA </td>
-                    <td onclick = "updateRecord()"> Washington DC </td>
-                    <td onclick = "updateRecord()"> Seattle </td>
-                    <td onclick = "updateRecord()"> 123 14412312 </td>
-                </tr>
+                <?php
+                    include("../PHP/databaseconnect.php");
+                    $sql = "SELECT ID, Username, Country, Email, Address, Tel FROM `create_account` WHERE Status = 'NO'";
+                    $result = mysqli_query($conn, $sql);
+                    while( $row = mysqli_fetch_assoc($result) )
+                    {
+                        echo "
+                        <tr>
+                            <td onclick = 'updateRecord()'> $row[ID] </td>
+                            <td onclick = 'updateRecord()'> $row[Username] </td>
+                            <td onclick = 'updateRecord()'> $row[Country] </td>
+                            <td onclick = 'updateRecord()'> $row[Email] </td>
+                            <td onclick = 'updateRecord()'> $row[Address] </td>
+                            <td onclick = 'updateRecord()'> $row[Tel] </td>
+                        </tr>
+                        ";
+                    }
+                ?>
+                
             </table>
             <button class = "add-record" type = "button" onclick = "createRecord()"> Add Record </button>
             <!-- information that pops up when the user clicks on the add record button -->

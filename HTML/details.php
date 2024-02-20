@@ -9,9 +9,9 @@
     <div id="description">
         <?php
             include_once("../PHP/databaseconnect.php");
-            if(isset($_GET["id"]))
+            if(isset($_GET["ID"]))
             {
-                $id = $_GET["id"];
+                $id = $_GET["ID"];
                 $sql = "SELECT Project_Description, Project_Name FROM `create_project` WHERE ID = $id";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
@@ -20,10 +20,19 @@
                     <p>{$row['Project_Name']}</p>
                     <h4 class='project-description'> Project Description </h4>
                     <p>{$row['Project_Description']}</p>
-                    <button type='button' class='accept back' onclick='HideDescription()'> Close </button>
+                    <button type='button' class='back-btn' onclick='HideDescription()' style = 'background: black;'><a href = 'admin_dashboard.php' style = 'text-decoration: none; color: white;'> Back </a></button>
                 ";
             }
         ?>
+        <style>
+            .back-btn
+            {
+                padding: 5px;
+                border-radius: 4px;
+                outline: 0px;
+                border: 0px;
+            }
+        </style>
     </div>
     <script src="../JavaScript/general.js"></script>
 </body>

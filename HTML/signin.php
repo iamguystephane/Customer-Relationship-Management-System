@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Login </title>
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
@@ -43,11 +43,12 @@
 
             if ($nameCheck = mysqli_fetch_assoc($resultName) and $pwdCheck = mysqli_fetch_assoc($resultPass))
             {
-                echo 'Login Successful';
+                echo "<script> alert('Login Successful') </script> ";
+                header("location: admin_dashboard.php");
             }
             else
             {
-                echo 'Username or Password incorrect';
+                echo "<script> alert('Username or Password is incorrect') </script> ";
             }
         }
     ?>

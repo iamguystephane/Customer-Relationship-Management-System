@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title> Home Page </title>
+        <title> Progress </title>
         <link rel = "stylesheet" href = "../CSS/general.css">
     </head>
     <body>
@@ -22,7 +22,7 @@
                     </div>
                     <div class = "user">
                         <i class = "fa-solid fa-user" id = "user-icon"></i><span class = "administrator"> Administrator </span>
-                        <i class = "fa-solid fa-angle-down" id = angle-down-icon></i>
+                        <i class = "fa-solid fa-angle-down" id = "angle-down-icon" onclick = "logout()"></i>
                     </div>
                 </div>
             </div>

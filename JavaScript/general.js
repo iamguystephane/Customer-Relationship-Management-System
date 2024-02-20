@@ -23,16 +23,6 @@ function HideUncompletedJob()
     completedProject.style.display = "none";
 }
 
-let projectDescription = document.querySelector("#description");
-function viewDescription()
-{
-    projectDescription.style.display = "block";
-}
-function HideDescription()
-{
-    projectDescription .style.display = "none";
-}
-
 
 // JavaScript for the contact page
 let recordCreate = document.querySelector(".add-record-page")
@@ -56,9 +46,27 @@ function goBack()
     recordUpdate.style.display = "none"
 }
 
+
+let logoutDrop = document.querySelector("#logout")
+let dropDown = document.querySelector("#angle-down-icon")
+
+function Logout()
+{
+    if(logoutDrop.style.display === "block")
+    {
+        dropDown.style.transform = "rotate(180)";
+        logoutDrop.style.display = "none";
+    }
+    else if(logoutDrop.style.display === "none")
+    {
+        dropDown.style.transform = "rotate(0)";
+        logoutDrop.style.display = "block";
+    }
+}
+
 // upload image section
 
-
+//administrator side image upload
 let uploadImage = document.querySelector("#input-file")
 let uploaded_image = "";
 uploadImage.addEventListener("change", function()
@@ -68,6 +76,20 @@ uploadImage.addEventListener("change", function()
     {
         uploaded_image = reader.result
         document.querySelector(".image").style.backgroundImage = `url(${uploaded_image})`
+    })
+    reader.readAsDataURL(this.files[0])
+})
+
+//Customer side image upload
+let uploadimage = document.querySelector("#enterFile")
+let uploaded_Image = "";
+uploadimage.addEventListener("change", function()
+{
+    let reader = new FileReader();
+    reader.addEventListener("load", () =>
+    {
+        uploaded_Image = reader.result
+        document.querySelector(".image2").style.backgroundImage = `url(${uploaded_Image})`
     })
     reader.readAsDataURL(this.files[0])
 })
@@ -83,3 +105,27 @@ function closeCreateProject()
 {
     document.querySelector(".main-section").style.display = "none";
 }
+
+
+// create account section
+document.querySelector('#myForm').addEventListener('submit', function(event)
+ {
+    var integerInput = document.querySelector('.label-email');
+    var integerError = document.querySelector('#integerError');
+
+    // Define a simple integer validation regex
+    var integerRegex = /^\d+$/;
+
+    // Check if the entered value is composed of only digits
+    if (!integerRegex.test(integerInput.value)) {
+        integerError.textContent = 'Invalid input. Please enter only integer characters.';
+        event.preventDefault(); // Prevent form submission
+    } 
+    else 
+    {
+        integerError.textContent = ''; // Clear error message
+    }
+ });
+
+//  logout
+//Note that if the javaScript code below this comment doesn't apply, just comment the above code to make it applicable

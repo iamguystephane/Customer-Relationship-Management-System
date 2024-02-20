@@ -1,4 +1,3 @@
-<!-- Create project, Project History, Progress. -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,9 +9,9 @@
         <div id = "container">
             <div class = "nav">
                 <div class = "main-nav-bar">
-                    <a href = ""> Dashboard </a>
+                    <a href = "customerdashboard.php"> Dashboard </a>
                     <a href = "createproject.php"> Create Project </a>
-                    <a href = ""> Progress </a>
+                    <a href = "customerprogress.php"> Progress </a>
                 </div>
                 <div class = "secondary-nav">
                     <div class = "search-bar">

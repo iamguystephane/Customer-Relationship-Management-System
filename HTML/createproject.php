@@ -3,16 +3,16 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title> Home Page </title>
+        <title> Create Project </title>
         <link rel = "stylesheet" href = "../CSS/customer.css">
     </head>
     <body>
         <div id = "container">
             <div class = "nav">
                 <div class = "main-nav-bar">
-                    <a href = "customer dashboard.php"> Dashboard </a>
-                    <a href = ""> Create Project </a>
-                    <a href = ""> Progress </a>
+                    <a href = "customerdashboard.php"> Dashboard </a>
+                    <a href = "createproject.php"> Create Project </a>
+                    <a href = "customerprogress.php"> Progress </a>
                 </div>
                 <div class = "secondary-nav">
                     <div class = "notification-icon">
@@ -24,7 +24,7 @@
                     </div>
                     <div class = "user">
                         <i class = "fa-solid fa-user" id = "user-icon"></i><span class = "administrator"> Guy Stephane </span>
-                        <i class = "fa-solid fa-angle-down" id = angle-down-icon></i>
+                        <i class = "fa-solid fa-angle-down" id = "angle-down-icon" onclick = "logout()"></i>
                     </div>
                 </div>
             </div>

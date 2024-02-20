@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Create Account </title>
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
-    <form action = "" method = "POST">
+    <form action = "" method = "POST" id = "myform">
         <div id = "container">
             <div class = "hero">
                 <h2> Registration </h2>
@@ -22,6 +22,7 @@
                 <div class = "tel">
                     <label for = "name" class = label-email> Tel </label>
                     <p><input type = "text" name = "tel" required autocomplete></p>
+                    <span id="integerError" class="error"></span>
                 </div>
                 <div class = "address">
                     <label for = "name" class = label-email> Address </label>
@@ -65,21 +66,32 @@
             $CountryCode = $_POST["country-code"];
             $Address = $_POST["addy"];
 
-            $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password')";
+            $sql = "SELECT Username, Email FROM `create_account` WHERE Username = '$Name' OR Email = '$Email'";
             $result = mysqli_query($conn, $sql);
             if($result)
             {
-                echo 'Account successfully created';
-                $sql = "INSERT INTO `login` VALUES ('$Name', '$Password')";
-                $result = mysqli_query($conn, $sql);
-            }
-            else
-            {
-                die ("Account could not be created".mysqli_errno($conn));
-            }
-        }
+                if(mysqli_num_rows($result) > 0)
+                {
+                    echo "<script> alert('Email or Username already used') </script> ";
+                }
+                else
+                {
+                    $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password')";
+                    $result = mysqli_query($conn, $sql);
+                    if($result)
+                    {
+                        echo "<script> alert('Account successfully created') </script> ";
+                        $sql = "INSERT INTO `login` VALUES ('$Name', '$Password')";
+                        $result = mysqli_query($conn, $sql);
+                        header("location: signin.php");
+                    }
+                    else
+                    {
+                        die ("Account could not be created".mysqli_errno($conn));
+                    }
+                }
+            }    
+        }      
     ?>
-
-
 </body>
 </html>

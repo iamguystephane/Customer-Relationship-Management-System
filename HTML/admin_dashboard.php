@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title> Home Page </title>
+        <title> Project Team Dashboard </title>
         <link rel = "stylesheet" href = "../CSS/general.css">
     </head>
     <body>
@@ -25,7 +25,7 @@
                     </div>
                     <div class = "user">
                         <i class = "fa-solid fa-user" id = "user-icon"></i><span class = "administrator"> Administrator </span>
-                        <i class = "fa-solid fa-angle-down" id = angle-down-icon></i>
+                        <i class = "fa-solid fa-angle-down" id = "angle-down-icon" onclick = "logout()"></i>
                     </div>
                 </div>
             </div>
@@ -88,9 +88,9 @@
                                         <td> $row[Customer_Name] </td>
                                         <td> $row[Project_Name] </td>
                                         <td>
-                                            <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity'> Accept </a> </button>
-                                            <button type = 'submit' class = 'decline' href = 'delete.php'> Decline </button>
-                                            <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity'> Details </a></button>
+                                            <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: black;'> Accept </a> </button>
+                                            <button type = 'submit' class = 'decline'<a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
+                                            <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
                                         </td>
                                     </tr>
                                 </form> 
@@ -118,6 +118,7 @@
                         $result = mysqli_query($conn, $sql);
                         while($row = mysqli_fetch_assoc($result))
                         {
+                            $identity = $row["ID"];
                             echo "
                                 <tr>
                                     <form method = 'POST'>
@@ -125,9 +126,9 @@
                                         <td> $row[Customer_Name] </td>
                                         <td> $row[Project_Name] </td>
                                         <td>
-                                            <button type = 'submit' class = 'accept'><href = 'progress.php'> View </button>
-                                            <button type = 'submit' class = 'accept'>Details </button>
-                                            <button type = 'submit' class = 'accept'> Delete </button>
+                                            <button type = 'submit' class = 'accept'><a href = 'progress.php'style = 'text-decoration: none; color: black;'> View </a></button>
+                                            <button type = 'submit' class = 'accept'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
+                                            <button type = 'submit' class = 'accept'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Delete </a></button>
                                         </td>
                                     </form>
                                 </tr>
@@ -139,7 +140,7 @@
             </div>
 
             <!-- This is what happens when you click on view completed projects -->
-            
+
             <div id = "uncompleted-project completed-project">
                 <h3> Uncompleted Projects </h3>
                 <table>
@@ -151,6 +152,11 @@
                     </tr>
                 </table>           
         </div>
+
+        <style>
+            
+        </style>
+
         <script src = "../JS/all.js"></script>
         <script src = "../JavaScript/general.js" defer></script>
     </body>
