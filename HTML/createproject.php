@@ -77,11 +77,11 @@
                 $result = mysqli_query($conn, $sql);
                 if ($result)
                 {
-                    echo "Project Received";
+                    echo "<script> alert('Project Received, check your project status') </script>";
                 }
                 else
                 {
-                    echo "Project Not received";
+                    echo "<script> alert('Project Submission Failed') </script>";
                 }
             }
         ?>

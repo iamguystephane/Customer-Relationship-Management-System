@@ -37,7 +37,7 @@
                 </tr>
                 <?php
                     include("../PHP/databaseconnect.php");
-                    $sql = "SELECT ID, Username, Country, Email, Address, Tel FROM `create_account` WHERE Status = 'NO'";
+                    $sql = "SELECT ID, Username, Country, Email, Address, Tel FROM `create_account` WHERE Status = 'user'";
                     $result = mysqli_query($conn, $sql);
                     while( $row = mysqli_fetch_assoc($result) )
                     {

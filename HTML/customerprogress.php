@@ -73,15 +73,7 @@
                 <div class = "image-comment section1">
                     <div class = "image-and-comment">
                         <div class = "image"></div>
-                        <p class = "image-comment-goes-here"></p>
-                        <input type = "text" class = "add-image-comment" placeholder = "add comment to image">
-                        <button type = "submit" class = "submit-comment-btn" onclick = "addCommentToImage()"> SEND </button>
-                        <p>
-                            <label for = "input-file" class = "image-comment-text"> Upload Image </label>
-                            <input type = "file" id = "input-file" accept = "image/png, image/jpeg, image/jpg">
-                        </p>
                     </div>
-                    <hr>
                 </div>
                 <div class = "image-comment">
                     <div class = "image-and-comment">
@@ -99,18 +91,14 @@
                 <style>
                     .image2
                     {
-                        width: 400px;
-                        height: 300px;
+                        width: 500px;
+                        height: 400px;
                         border: 1px solid black;
                         margin-top: -50px;
                         background-position: center;
                         background-size: cover;
                     }
                     #enterFile
-                    {
-                        display: none;
-                    }
-                    .section1
                     {
                         display: none;
                     }
@@ -122,7 +110,7 @@
                     .progress-main-section
                     {
                         display: flex;
-                        gap: 400px;
+                        gap: 150px;
                     }
                     .finish-project-btn
                     {
@@ -131,6 +119,10 @@
                     .image-comment
                     {
                         margin-top: 5%;
+                    }
+                    .image-comment-text
+                    {
+                        margin-left: 40%;
                     }
                     textarea
                     {
@@ -146,9 +138,6 @@
                     }
                 </style>
             </div>
-            <form method = "POST">
-                <button type = "submit" class = "decline finish-project-btn" name = "submitproject"><a href = "finish.php"> Finish </button>
-            </form>
         </div>
         <script src = "../JS/all.js"></script>
         <script src = "../JavaScript/general.js" defer></script>

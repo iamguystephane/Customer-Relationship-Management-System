@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Create Account </title>
+    <title> Admin Create Account </title>
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
     <form action = "" method = "POST" id = "myform">
         <div id = "container">
             <div class = "hero">
-                <h2> Registration </h2>
+                <h2> Admin registration </h2>
                 <div class = "name">
                     <label for = "name" class = label-name> Username </label>
                     <p><input type = "text" name = "name" required autocomplete></p>
@@ -76,12 +76,12 @@
                 }
                 else
                 {
-                    $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password')";
+                    $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password, Status) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password', 'admin')";
                     $result = mysqli_query($conn, $sql);
                     if($result)
                     {
                         echo "<script> alert('Account successfully created') </script> ";
-                        $sql = "INSERT INTO `login` VALUES ('$Name', '$Password')";
+                        $sql = "INSERT INTO `login` VALUES ('$Name', '$Password', 'admin')";
                         $result = mysqli_query($conn, $sql);
                         header("location: signin.php");
                     }

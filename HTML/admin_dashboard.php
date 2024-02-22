@@ -150,7 +150,8 @@
                         <th> Project Title </th>
                         <th> Action </th>
                     </tr>
-                </table>           
+                </table> 
+            </div>          
         </div>
 
         <style>

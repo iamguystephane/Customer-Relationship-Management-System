@@ -27,21 +27,22 @@
                 </div>
             </div>
             <div class = "progress-main-section">
-                <div class = "image-comment">
-                    <div class = "image-and-comment">
-                        <div class = "image"></div>
-                        <p class = "image-comment-goes-here"></p>
-                        <input type = "text" class = "add-image-comment" placeholder = "add comment to image">
-                        <button type = "submit" class = "submit-comment-btn" onclick = "addCommentToImage()"> Add </button>
-                        <p>
-                            <label for = "input-file" class = "image-comment-text"> Upload Image </label>
-                            <input type = "file" id = "input-file" accept = "image/png, image/jpeg, image/jpg">
-                        </p>
+                <form action = "" method = "post" enctype = "multipart/form-data">
+                    <div class = "image-comment">
+                        <div class = "image-and-comment">
+                            <div class = "image"></div>
+                                <p class = "image-comment-goes-here"></p>
+                                <input type = "text" class = "add-image-comment" placeholder = "add comment to image" name = "comment">
+                                <button type = "submit" class = "submit-comment-btn" onclick = "addCommentToImage()" name = "addImageAndComment"> Add </button>
+                                <p>
+                                    <label for = "input-file" class = "image-comment-text"> Upload Image </label>
+                                    <input type = "file" id = "input-file" accept = "image/png, image/jpeg, image/jpg" name = "imageFile">
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <button type = "submit" class = "decline finish-project-btn" name = "submitproject"> Finish </button>
                     </div>
-                    <hr>
-                </div>
-                <form method = "POST">
-                    <button type = "submit" class = "decline finish-project-btn" name = "submitproject"><a href = "finish.php"> Finish </button>
                 </form>
                 <style>
                     a
@@ -52,6 +53,37 @@
                 </style>
             </div>
         </div>
+
+        <?php
+            include_once("../PHP/databaseconnect.php");
+
+            if(isset($_POST["addImageAndComment"]))
+            {
+                $comment = $_POST["comment"];
+                $image = $_FILES["imageFile"];
+                $imageFileName = $image["name"];
+                $imageFileTemp = $image["tmp_name"];
+                $fileName_separate = explode('.', $imageFileName);
+                $file_extension = strtolower(end($fileName_separate));
+                $extension = array('jpeg','jpg','png');
+                if(in_array($file_extension, $extension))
+                {
+                    $upload_image = '../images/'.$imageFileName;
+                    move_uploaded_file($imageFileTemp, $upload_image);
+                    $sql = "INSERT INTO `image comment` (Comment, Image, Status) VALUES ('$comment', '$upload_image', 'admin')";
+                    $result = mysqli_query($conn, $sql);
+                    if($result)
+                    {
+                        echo "<script> alert('Data inserted successfully') </script>";
+                    }
+                    else
+                    {
+                        die(mysqli_error($conn));
+                    }
+                }
+            }
+        ?>
+
         <script src = "../JS/all.js"></script>
         <script src = "../JavaScript/general.js" defer></script>
     </body>

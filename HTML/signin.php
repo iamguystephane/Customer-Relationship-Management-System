@@ -43,8 +43,23 @@
 
             if ($nameCheck = mysqli_fetch_assoc($resultName) and $pwdCheck = mysqli_fetch_assoc($resultPass))
             {
-                echo "<script> alert('Login Successful') </script> ";
-                header("location: admin_dashboard.php");
+                $userStatus = $nameCheck['Status'];
+                if($userStatus === 'admin')
+                {
+                    echo "<script> alert('Login Successful') </script> ";
+                    header("location: admin_dashboard.php");
+                    exit();
+                }
+                elseif($userStatus === 'user')
+                {
+                    echo "<script> alert('Login Successful') </script> ";
+                    header("location: customerdashboard.php");
+                    exit();
+                }
+                else
+                {
+                    echo "<script> alert('Unknown Status') </script> ";
+                }
             }
             else
             {
