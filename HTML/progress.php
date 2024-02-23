@@ -27,32 +27,67 @@
                 </div>
             </div>
             <div class = "progress-main-section">
-                <form action = "" method = "post" enctype = "multipart/form-data">
-                    <div class = "image-comment">
-                        <div class = "image-and-comment">
-                            <div class = "image"></div>
-                                <p class = "image-comment-goes-here"></p>
-                                <input type = "text" class = "add-image-comment" placeholder = "add comment to image" name = "comment">
-                                <button type = "submit" class = "submit-comment-btn" onclick = "addCommentToImage()" name = "addImageAndComment"> Add </button>
+                <form action = '' method = 'post' enctype = 'multipart/form-data'>
+                    <div class = 'image-comment'>
+                        <div class = 'image-and-comment'>
+                            <div class = 'image'></div>
+                                <p class = 'image-comment-goes-here'></p>
+                                <input type = 'text' class = 'add-image-comment' placeholder = 'add comment to image' name = 'comment'>
+                                <button type = 'submit' class = 'submit-comment-btn' onclick = 'addCommentToImage()' name = 'addImageAndComment'> Add </button>
                                 <p>
-                                    <label for = "input-file" class = "image-comment-text"> Upload Image </label>
-                                    <input type = "file" id = "input-file" accept = "image/png, image/jpeg, image/jpg" name = "imageFile">
+                                    <label for = 'input-file' class = 'image-comment-text'> Upload Image </label>
+                                    <input type = 'file' id = 'input-file' accept = 'image/png, image/jpeg, image/jpg' name = 'imageFile'>
                                 </p>
                             </div>
                         </div>
                         <hr>
-                        <button type = "submit" class = "decline finish-project-btn" name = "submitproject"> Finish </button>
+                        <button type = 'submit' class = 'decline finish-project-btn' name = 'submitproject'> Finish </button>
                     </div>
                 </form>
-                <style>
+            <?php
+                include_once("../PHP/databaseconnect.php");
+                $sql = "SELECT * FROM `image comment` WHERE Status = 'user'";
+                $result = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo"
+                    <div class = 'adminProgressHero'>
+                        <form action = '' method = 'post' enctype = 'multipart/form-data'>
+                            <div class = 'image-comment'>
+                                <div class = 'image-and-comment'>
+                                    <div class = 'image'></div>
+                                        <p class = 'image-comment-goes-here'></p>
+                                        <input type = 'text' class = 'add-image-comment' placeholder = 'add comment to image' name = 'comment'>
+                                        <button type = 'submit' class = 'submit-comment-btn' onclick = 'addCommentToImage()' name = 'addImageAndComment'> Add </button>
+                                        <p>
+                                            <label for = 'input-file' class = 'image-comment-text'> Upload Image </label>
+                                            <input type = 'file' id = 'input-file' accept = 'image/png, image/jpeg, image/jpg' name = 'imageFile'>
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <button type = 'submit' class = 'decline finish-project-btn' name = 'submitproject'> Finish </button>
+                            </div>
+                            <div class = 'userProgressHero'>
+                                <div class = ''><img src = '{$row['Image']}' /></div>
+                                <p style = 'text-decoration: wrap;' class = 'imageTitle'>{$row['Comment']}</p>
+                                <hr style = 'margin-top: 140px;'>
+                                <br><br><br>
+                            </div>
+                        </form>
+                    </div>
+                    ";
+                }
+            ?>
+
+        </div>
+        <style>
                     a
                     {
                         text-decoration: none;
                         color: white;
                     }
-                </style>
-            </div>
-        </div>
+        </style>
 
         <?php
             include_once("../PHP/databaseconnect.php");
