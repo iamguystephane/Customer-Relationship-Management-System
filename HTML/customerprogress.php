@@ -72,39 +72,74 @@
             <div class = "progress-main-section">
                 <div class = "image-comment section1">
                     <div class = "image1" style = "margin-top: 50px;">
-
+                    <form action = "" method = "POST" enctype = "multipart/form-data">
+                        <p class = 'image-comment-goes-here' style = 'margin-left: 25%;'>
+                            <textarea cols = "80" rows = "5" name = "comment" placeholder = "comment on the image as seen directly on your left. you can add an image if necessary to help us understand you better."></textarea>
+                        </p>
+                        <p style = 'margin-left: 25%;'>
+                            <input type = 'file' id = 'input-file' accept = 'image/png, image/jpeg, image/jpg' name = 'imageFile' style = "display: block; margin-top: 5px;">
+                            <p><button type = 'submit' class = 'submit-comment-btn' onclick = 'addCommentToImage()' name = 'addImageAndComment' style = 'padding: 5px; margin-left: 24.5%;'> SUBMIT </button></p>
+                        </p>
+                        
+                    </form>
                         <?php
                             include_once("../PHP/databaseconnect.php");
-                            $sql = "SELECT * FROM `image comment` WHERE Status = 'admin'";
+                            $sql = "SELECT * FROM `adminImage`";
                             $result = mysqli_query($conn,$sql);
-                            while ($row = mysqli_fetch_assoc($result))
-                            {
-                                echo "
-                                <div class = 'progressHero'>
-                                    <div class = 'progressAdmin'>
-                                        <div class = ''><img src = '{$row['Image']}' /></div>
-                                        <p style = 'text-decoration: wrap;' class = 'imageTitle'>{$row['Comment']}</p>
-                                        <hr style = 'margin-top: 140px;'>
-                                        <br><br><br>
-                                    </div>
-                                    <div class = 'image-comment comment2'>
-                                        <form action = '' method = 'post'>
-                                            <div class = 'image-and-comment'>
-                                                <div class = 'image2'></div>
-                                                <p class = 'image-comment-goes-here'></p>
-                                                <textarea name = 'customerText' id = '' cols ='31' rows ='3' class = 'add-image-comment' placeholder = 'upload a comment based on the image directly on your left. You can also add an image to help us better understand you'></textarea>
-                                                <p><button type = 'submit' class = 'submit-comment-btn btn-2' onclick = 'addCommentToImage()' name = 'customerSend'> SEND </p></button>
-                                                <p>
-                                                    <label for = 'enterFile' class = 'image-comment-text' name = ''> Upload Image </label>
-                                                    <input type = 'file' name = 'addImg' id = 'enterFile' accept = 'image/png, image/jpeg, image/jpg'>
-                                                </p>
+                            echo "<div class = '' style = 'display: flex; gap: 200px; margin-top: 2%; flex-wrap: wrap;'>";
+                                while ($row = mysqli_fetch_assoc($result))
+                                {
+                                    $adminID = $row["AID"];
+                                    $img = $row["Image"];
+                                    $comment = $row["Comment"];
+                                        echo "
+                                        <div class = 'adminProgressHero'>
+                                            <div class = 'progressAdmin'>
+                                                <div class = ''><img src = '{$row['Image']}' /></div>
+                                                <p class = 'imageTitle'>{$row['Comment']}</p>
+                                                <hr style = 'margin-top: 140px;'>
+                                                <input type ='text' value ='$img'>
+                                                <br><br><br>
                                             </div>
-                                        </form>
-                                        <hr>
-                                    </div>
-                                </div>
-                                ";
-                            }
+                                        </div>
+                                        
+                                        <div class = 'userProgressHero'>
+                                            <div class = ''><img src = '{$row['Image']}' /></div>
+                                            <p style = 'text-decoration: wrap;' class = 'imageTitle'>{$row['Comment']}q</p>
+                                        <br><br><br>
+                                        </div>
+                                        ";
+                                }
+                            echo "</div>";
+
+
+                                /*###################### inserting into customers table ################ */
+
+                                if(isset($_POST["addImageAndComment"]))
+                                {   
+                                    $comment = $_POST["comment"];
+                                    $image = $_FILES["imageFile"];
+                                    $imageFileName = $image["name"];
+                                    $imageFileTemp = $image["tmp_name"];
+                                    $fileName_separate = explode('.', $imageFileName);
+                                    $file_extension = strtolower(end($fileName_separate));
+                                    $extension = array('jpeg','jpg','png');
+                                    if(in_array($file_extension, $extension))
+                                    {
+                                        $upload_image = '../images/'.$imageFileName;
+                                        move_uploaded_file($imageFileTemp, $upload_image);
+                                    }
+                                    $sql = "INSERT INTO `customerImage` (AID, ImgName, Comment) VALUES ('$adminID', '$upload_image', '$comment')";
+                                    $result = mysqli_query($conn, $sql);
+                                    if($result)
+                                    {
+                                        echo "<script> alert('Data inserted successfully') </script>";
+                                    }
+                                    else
+                                    {
+                                        die(mysqli_error($conn));
+                                    }
+                                }
                         ?>
                     </div>
                 </div>
@@ -176,33 +211,33 @@
         </div>
 
         <?php
-            include_once("../PHP/databaseconnect.php");
+            // include_once("../PHP/databaseconnect.php");
 
-            if(isset($_POST["customerSend"]))
-            {
-                $comment = $_POST["customerText"];
-                $image = $_FILES["addImg"];
-                $imageFileName = $image["name"];
-                $imageFileTemp = $image["tmp_name"];
-                $fileName_separate = explode('.', $imageFileName);
-                $file_extension = strtolower(end($fileName_separate));
-                $extension = array('jpeg','jpg','png');
-                if(in_array($file_extension, $extension))
-                {
-                    $upload_image = '../images/'.$imageFileName;
-                    move_uploaded_file($imageFileTemp, $upload_image);
-                    $sql = "INSERT INTO `image comment` (Comment, Image, Status) VALUES ('$comment', '$upload_image', 'user')";
-                    $result = mysqli_query($conn, $sql);
-                    if($result)
-                    {
-                        echo "<script> alert('Data inserted successfully') </script>";
-                    }
-                    else
-                    {
-                        die(mysqli_error($conn));
-                    }
-                }
-            }
+            // if(isset($_POST["addImageAndComment"]))
+            // {
+            //     $comment = $_POST["comment"];
+            //     $image = $_FILES["imageFile"];
+            //     $imageFileName = $image["name"];
+            //     $imageFileTemp = $image["tmp_name"];
+            //     $fileName_separate = explode('.', $imageFileName);
+            //     $file_extension = strtolower(end($fileName_separate));
+            //     $extension = array('jpeg','jpg','png');
+            //     if(in_array($file_extension, $extension))
+            //     {
+            //         $upload_image = '../images/'.$imageFileName;
+            //         move_uploaded_file($imageFileTemp, $upload_image);
+            //     }
+            //     $sql = "INSERT INTO `image comment` (Image, Status, Comment) VALUES ('$upload_image', 'user', '$comment')";
+            //     $result = mysqli_query($conn, $sql);
+            //     if($result)
+            //     {
+            //         echo "<script> alert('Data inserted successfully') </script>";
+            //     }
+            //     else
+            //     {
+            //         die(mysqli_error($conn));
+            //     }
+            // }
         ?>
 
 

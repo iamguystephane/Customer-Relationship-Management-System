@@ -16,7 +16,10 @@
                     <a href = ""> Settings </a>
                 </div>
                 <div class = "secondary-nav">
-                    <div class = "search-bar">
+                    <div class = "notification-icon">
+                        <i class = "fas fa-bell" id = "notification-bell"></i>
+                    </div>
+                    <div class = "search-bar" style = 'margin: 0px;'>
                         <i class = "fas fa-search" id = "search-icon"></i>
                         <input type = "text" placeholder = "Search" class = "nav-search-bar">
                     </div>

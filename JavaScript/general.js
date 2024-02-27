@@ -85,13 +85,13 @@ let uploadimage = document.querySelector("#enterFile")
 let uploaded_Image = "";
 uploadimage.addEventListener("change", function()
 {
-    let reader = new FileReader();
-    reader.addEventListener("load", () =>
+    let read = new FileReader();
+    read.addEventListener("load", () =>
     {
-        uploaded_Image = reader.result
+        uploaded_Image = read.result
         document.querySelector(".image2").style.backgroundImage = `url(${uploaded_Image})`
     })
-    reader.readAsDataURL(this.files[0])
+    read.readAsDataURL(this.files[0])
 })
 
 // customer section

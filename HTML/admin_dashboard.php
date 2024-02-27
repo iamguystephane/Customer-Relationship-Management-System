@@ -89,7 +89,7 @@
                                         <td> $row[Project_Name] </td>
                                         <td>
                                             <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: black;'> Accept </a> </button>
-                                            <button type = 'submit' class = 'decline'<a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
+                                            <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
                                             <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
                                         </td>
                                     </tr>

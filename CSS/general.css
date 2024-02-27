@@ -131,7 +131,7 @@ body
 }
 .dashboard-square
 {
-    margin-left: 17%;
+    margin-left: 19%;
     margin-top: -50px;
     gap: 50px;
     display: flex;
@@ -392,10 +392,7 @@ label
     margin-top: 5px;
     margin-left: 35px;
 }
-#input-file
-{
-    display: none;
-}
+
 .finish-project-btn
 {
     color: white;
