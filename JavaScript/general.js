@@ -46,22 +46,12 @@ function goBack()
     recordUpdate.style.display = "none"
 }
 
+// This is the line underneath each tab on the side bar...
 
-let logoutDrop = document.querySelector("#logout")
-let dropDown = document.querySelector("#angle-down-icon")
-
-function Logout()
+let dashboardLine = document.querySelector(".line-dashboard");
+function dashboardClick()
 {
-    if(logoutDrop.style.display === "block")
-    {
-        dropDown.style.transform = "rotate(180)";
-        logoutDrop.style.display = "none";
-    }
-    else if(logoutDrop.style.display === "none")
-    {
-        dropDown.style.transform = "rotate(0)";
-        logoutDrop.style.display = "block";
-    }
+    dashboardLine.style.display = "block";
 }
 
 // upload image section

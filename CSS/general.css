@@ -8,6 +8,7 @@ body
     height: 100%;
     width: 100%;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.74);
 }
 
 /* nav bar */
@@ -15,20 +16,56 @@ body
 {
     display: flex;
 }
+.header-bar
+{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background: black;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+}
+.line-dashboard
+{
+    height: 1px;
+    width: 60px;
+    background: white;
+    margin-left: 40%;
+    margin-top: -15%;
+    /* display: none; */
+}
 .main-nav-bar
 {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     width: 10%;
     height: 100vh;
+    position: fixed;
+    z-index: 1;
 }
-.main-nav-bar a
-{
+.main-nav-bar a {
     display: block;
     text-decoration: none;
-    color: white;
-    line-height: 7.5;
+    color: grey;
+    line-height: 3.5;
     text-align: center;
+    margin-top: 40%;
+    font-size: 20px;
 }
+.main-nav-bar a:hover {
+    color: white;
+}
+
+#font-awesome
+{
+    color: white;
+    margin-top: 73px;
+    font-size: 30px;
+    margin-left: 7%;
+    cursor: pointer;
+}
+
 .secondary-nav
 {
     display: flex;
@@ -68,10 +105,11 @@ body
 {
     width: 25px;
     height: 25px;
-    margin-left: 80px;
+    margin-left: 200px;
     margin-top: 5px;
     cursor: pointer;
     padding: 5px;
+    color: white;
 }
 #notification-bell:hover
 {
@@ -79,6 +117,7 @@ body
     border-radius: 50%;
     color: white;
 }
+
 .nav-search-bar::placeholder
 {
     color: white;
@@ -87,11 +126,16 @@ body
 {
     position: absolute;
     top: 10px;
-    right: 20px;
+    left: 48%;
     font-size: 20px;
     /* transform: rotate(90deg); */
     cursor: pointer;
     color: white;
+}
+.search-bar
+{
+    margin-left: 25%;
+    margin-top: -2%;
 }
 .nav-search
 {
@@ -107,32 +151,37 @@ body
 .user
 {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    margin-right: 5%;
 }
 .administrator
 {
     font-size: 20px;
     font-weight: bold;
+    color: white;
+    margin-top: 4px;
 }
 
 #user-icon
 {
     font-size: 20px;
-}
-#angle-down-icon
-{
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: black;
     color: white;
-    padding: 4px;
+    margin-top: 4px;
+}
+#power-icon
+{
+    width: 20px;
+    height: 20px;
+    color: white;
+    background: rgb(180, 171, 171);
+    border-radius: 50%;
+    padding: 5px;
     cursor: pointer;
 }
 .dashboard-square
 {
     margin-left: 19%;
-    margin-top: -50px;
+    margin-top: 45%;
     gap: 50px;
     display: flex;
     text-align: center;
@@ -143,7 +192,7 @@ body
     height: 150px;
     width: 200px;
     background-color: rgb(66, 101, 107);
-    margin-top: -40%;
+    margin-top: -35%;
     position: relative;
     font-weight: 600;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(195, 0, 255));
@@ -214,7 +263,7 @@ body
 {
     height: 20px;
     width: 100%;
-    background-color: rgb(82, 70, 70);
+    background-color: rgb(41, 38, 38);
     margin-top: 150px;
     border-radius: 10px;
 }
@@ -332,7 +381,7 @@ table, th, td
 .progress-main-section
 {
     margin-left: 10%;
-    margin-top: -46%;
+    margin-top: 5%;
 }
 .add-image-comment
 {

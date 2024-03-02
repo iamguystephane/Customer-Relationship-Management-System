@@ -78,7 +78,7 @@
                 {
                     $sql = "INSERT INTO `create_account` (Username, Email, Tel, Address, Gender, Country, Country_Code, Password, Status) VALUES ('$Name', '$Email', '$Tel', '$Address', '$Gender', '$Country', '$CountryCode', '$Password', 'user')";
                     $result = mysqli_query($conn, $sql);
-                    if($result)
+                    if($result) 
                     {
                         echo "<script> alert('Account successfully created') </script> ";
                         $sql = "INSERT INTO `login` VALUES ('$Name', '$Password', 'user')";

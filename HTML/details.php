@@ -12,15 +12,19 @@
             if(isset($_GET["ID"]))
             {
                 $id = $_GET["ID"];
-                $sql = "SELECT Project_Description, Project_Name FROM `create_project` WHERE ID = $id";
+                $sql = "SELECT * FROM `create_project` WHERE ID = $id";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
+                $identity = $row["ID"];
                 echo "
                     <h4 class='project-title'> Project Title </h4>
                     <p>{$row['Project_Name']}</p>
                     <h4 class='project-description'> Project Description </h4>
                     <p>{$row['Project_Description']}</p>
-                    <button type='button' class='back-btn' onclick='HideDescription()' style = 'background: black;'><a href = 'admin_dashboard.php' style = 'text-decoration: none; color: white;'> Back </a></button>
+                    <p style = 'display: flex; gap: 100px;'>
+                        <button type='button' class='back-btn' onclick='HideDescription()' style = 'background: black;'><a href = 'admin_dashboard.php' style = 'text-decoration: none; color: white;'> Back </a></button>
+                        <button type='button' class='back-btn' onclick='HideDescription()' style = 'background: black;'><a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: white;'> Accept </a></button>
+                    </p>
                 ";
             }
         ?>
