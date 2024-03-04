@@ -11,26 +11,28 @@
     <div id="container">
         <div class="nav">
             <div class="main-nav-bar">
-                <div class = "dashboard" style = "display: flex;">
-                <i class = "fa fa-dashboard" id = "font-awesome"></i>
-                    <a href="admin_dashboard.php"> Dashboard </a>
-                </div>
-                <div class = "contacts" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
-                    <a href="contact.php"> Contacts </a>
-                </div>
-                <div class = "line-dashboard"></div>
-                <div class = "progress" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
-                    <a href="progress.php"> Progress </a>
-                </div>
-                <div class = "reports" style = "display: flex; gap: 20px;">
-                    <i class = "fa fa-file" id = "font-awesome"> </i>
-                    <a href = ""> Reports </a>
-                </div>
-                <div class = "settings" style = "display: flex; gap: 10px;">
-                    <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
-                    <a href = ""> Settings </a>
+                <div class = "main-nav-bar-a">
+                    <div class = "dashboard" style = "display: flex; gap: 20px;">
+                    <i class = "fa fa-dashboard" id = "font-awesome"></i>
+                        <a href="admin_dashboard.php"> Dashboard </a>
+                    </div>
+                    <div class = "contacts" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
+                        <a href="contact.php" style = "margin-top: 95px;"> Contacts </a>
+                    </div>
+                    <div class = "line-dashboard"></div>
+                    <div class = "progress" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
+                        <a href="progress.php"> Progress </a>
+                    </div>
+                    <div class = "reports" style = "display: flex; gap: 30px;">
+                        <i class = "fa fa-file" id = "font-awesome"> </i>
+                        <a href = ""> Reports </a>
+                    </div>
+                    <div class = "settings" style = "display: flex; gap: 20px;">
+                        <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
+                        <a href = ""> Settings </a>
+                    </div>
                 </div>
             </div>
 
@@ -38,7 +40,7 @@
                 #font-awesome
                 {
                     color: white;
-                    margin-top: 73px;
+                    margin-top: 90px;
                     font-size: 30px;
                     margin-left: 7%;
                     cursor: pointer;
@@ -64,7 +66,7 @@
                                 onclick="Logout()"></i></a>
                     </div>
                 </div>
-                <div class="search-bar" style="margin-top: 3%; margin-left: 32%;">
+                <div class="search-bar" style="margin-top: 3%; margin-left: 35%;">
                     <i class="fas fa-search" id="search-icon"></i>
                     <input type="text" placeholder="Search" class="nav-search-bar">
                 </div>
@@ -199,7 +201,7 @@
 
         .main-nav-bar {
             background-color: black;
-            width: 10%;
+            width: 13%;
             height: 100vh;
             position: fixed;
         }
@@ -208,9 +210,9 @@
             display: block;
             text-decoration: none;
             color: grey;
-            line-height: 3.5;
+            line-height: 1.5;
             text-align: center;
-            margin-top: 40%;
+            margin-top: 50%;
             font-size: 20px;
         }
         .main-nav-bar a:hover {
@@ -223,7 +225,7 @@
             background: white;
             margin-left: 40%;
             margin-top: -15%;
-            /* display: none; */
+            display: none;
         }
         .secondary-nav {
             display: flex;
@@ -337,7 +339,7 @@
         table,
         th,
         td {
-            margin-left: 11%;
+            margin-left: 15%;
             text-align: center;
             border: 1px solid black;
             border-collapse: collapse;
@@ -348,7 +350,7 @@
         table th {
             background-color: black;
             color: white;
-            width: 175px;
+            width: 165px;
         }
 
         table tr:hover {
@@ -358,7 +360,7 @@
         }
 
         .add-record-page {
-            margin-left: 12%;
+            margin-left: 14%;
             margin-top: 2%;
             padding: 10px;
             width: 600px;
@@ -367,7 +369,7 @@
         }
 
         .add-record {
-            margin-left: 11%;
+            margin-left: 15%;
             margin-top: 1%;
             padding: 10px;
             background-color: black;
@@ -398,7 +400,7 @@
         }
 
         .update-record-page {
-            margin-left: 12%;
+            margin-left: 14%;
             margin-top: 2%;
             padding: 10px;
             width: 600px;

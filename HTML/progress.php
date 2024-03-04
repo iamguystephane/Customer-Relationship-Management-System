@@ -11,26 +11,28 @@
     <div id="container">
         <div class="nav">
             <div class="main-nav-bar">
-                <div class = "dashboard" style = "display: flex;">
-                <i class = "fa fa-dashboard" id = "font-awesome"></i>
-                    <a href="admin_dashboard.php" onclick = "dashboardClick()"> Dashboard </a>
-                </div>
-                <div class = "contacts" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
-                    <a href="contact.php" onclick = "contactsClick()"> Contacts </a>
-                </div>
-                <div class = "progress" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
-                    <a href="progress.php" onclick = "progressClick()"> Progress </a>
-                </div>
-                <div class = "line-dashboard progress"></div>
-                <div class = "reports" style = "display: flex; gap: 20px;">
-                    <i class = "fa fa-file" id = "font-awesome"> </i>
-                    <a href = "" onclick = "reportsClick()"> Reports </a>
-                </div>
-                <div class = "settings" style = "display: flex; gap: 10px;">
-                    <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
-                    <a href = "" onclick = "settingsClick()"> Settings </a>
+                <div class = "main-nav-bar-a">
+                    <div class = "dashboard" style = "display: flex; gap: 20px;">
+                    <i class = "fa fa-dashboard" id = "font-awesome"></i>
+                        <a href="admin_dashboard.php"> Dashboard </a>
+                    </div>
+                    <div class = "contacts" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
+                        <a href="contact.php" style = "margin-top: 95px;"> Contacts </a>
+                    </div>
+                    <div class = "line-dashboard"></div>
+                    <div class = "progress" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
+                        <a href="progress.php"> Progress </a>
+                    </div>
+                    <div class = "reports" style = "display: flex; gap: 30px;">
+                        <i class = "fa fa-file" id = "font-awesome"> </i>
+                        <a href = ""> Reports </a>
+                    </div>
+                    <div class = "settings" style = "display: flex; gap: 20px;">
+                        <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
+                        <a href = ""> Settings </a>
+                    </div>
                 </div>
             </div>
 
@@ -106,7 +108,7 @@
                     <div class = ''><img src = '{$row['ImgName']}' /></div>
                     <p style = 'text-decoration: wrap; color: white; font-weight: 600;' class = 'imageTitle'>{$row['Comment']}</p>
 
-                    <br>
+                    <br><br><br><br><br><br>
                 </div>
                 <div class = 'userProgressHero' style = 'margin-right: 4%; margin-top: 2%;'>
                 ";

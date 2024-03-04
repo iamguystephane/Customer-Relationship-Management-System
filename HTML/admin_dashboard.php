@@ -10,27 +10,29 @@
 <body>
     <div id="container">
         <div class="nav">
-            <div class="main-nav-bar">
-                <div class = "dashboard" style = "display: flex;">
+        <div class="main-nav-bar">
+                <div class = "main-nav-bar-a">
+                    <div class = "dashboard" style = "display: flex; gap: 20px;">
                     <i class = "fa fa-dashboard" id = "font-awesome"></i>
-                    <a href="admin_dashboard.php"> Dashboard </a>
-                </div>
-                <div class = "line-dashboard"></div>
-                <div class = "contacts" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
-                    <a href="contact.php"> Contacts </a>
-                </div>
-                <div class = "progress" style = "display: flex; gap: 10px;">
-                    <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
-                    <a href="progress.php"> Progress </a>
-                </div>
-                <div class = "reports" style = "display: flex; gap: 20px;">
-                    <i class = "fa fa-file" id = "font-awesome"> </i>
-                    <a href = ""> Reports </a>
-                </div>
-                <div class = "settings" style = "display: flex; gap: 10px;">
-                    <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
-                    <a href = ""> Settings </a>
+                        <a href="admin_dashboard.php"> Dashboard </a>
+                    </div>
+                    <div class = "contacts" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-address-book" id = "font-awesome" style = "margin-top: 55%;"></i>
+                        <a href="contact.php" style = "margin-top: 95px;"> Contacts </a>
+                    </div>
+                    <div class = "line-dashboard"></div>
+                    <div class = "progress" style = "display: flex; gap: 25px;">
+                        <i class = "fa-solid fa-bars-progress" id = "font-awesome"></i>
+                        <a href="progress.php"> Progress </a>
+                    </div>
+                    <div class = "reports" style = "display: flex; gap: 30px;">
+                        <i class = "fa fa-file" id = "font-awesome"> </i>
+                        <a href = ""> Reports </a>
+                    </div>
+                    <div class = "settings" style = "display: flex; gap: 20px;">
+                        <i class = "fa fa-cog" aria-hidden = "true" id = "font-awesome"> </i>
+                        <a href = ""> Settings </a>
+                    </div>
                 </div>
             </div>
 
@@ -147,18 +149,18 @@
                         $identity = $row["ID"];
                         echo "
                             <form method = 'POST'>
-                                    <tr>
-                                        <td> $identity </td>
-                                        <td> $row[Customer_Name] </td>
-                                        <td> $row[Project_Name] </td>
-                                        <td>
-                                            <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: black;'> Accept </a> </button>
-                                            <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
-                                            <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
-                                        </td>
-                                    </tr>
-                                </form> 
-                                ";
+                                <tr>
+                                    <td> $identity </td>
+                                    <td> $row[Customer_Name] </td>
+                                    <td> $row[Project_Name] </td>
+                                    <td>
+                                        <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: black;'> Accept </a> </button>
+                                        <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
+                                        <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
+                                    </td>
+                                </tr>
+                            </form> 
+                        ";
                     }
                 }
                 ?>

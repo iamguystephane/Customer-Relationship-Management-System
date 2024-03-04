@@ -12,6 +12,7 @@ body
 }
 
 /* nav bar */
+
 .nav
 {
     display: flex;
@@ -30,7 +31,7 @@ body
 .main-nav-bar
 {
     background-color: black;
-    width: 10%;
+    width: 13%;
     height: 100vh;
     position: fixed;
     z-index: 1;
@@ -41,7 +42,6 @@ body
     color: grey;
     line-height: 3.5;
     text-align: center;
-    margin-top: 40%;
     font-size: 20px;
 }
 .main-nav-bar a:hover {

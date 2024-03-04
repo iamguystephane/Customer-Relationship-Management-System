@@ -34,12 +34,12 @@ body
     background: white;
     margin-left: 40%;
     margin-top: -15%;
-    /* display: none; */
+    display: none;
 }
 .main-nav-bar
 {
     background-color: black;
-    width: 10%;
+    width: 13%;
     height: 100vh;
     position: fixed;
     z-index: 1;
@@ -48,9 +48,9 @@ body
     display: block;
     text-decoration: none;
     color: grey;
-    line-height: 3.5;
+    line-height: 1.5;
     text-align: center;
-    margin-top: 40%;
+    margin-top: 50%;
     font-size: 20px;
 }
 .main-nav-bar a:hover {
@@ -60,7 +60,7 @@ body
 #font-awesome
 {
     color: white;
-    margin-top: 73px;
+    margin-top: 90px;
     font-size: 30px;
     margin-left: 7%;
     cursor: pointer;
@@ -180,7 +180,7 @@ body
 }
 .dashboard-square
 {
-    margin-left: 19%;
+    margin-left: 20%;
     margin-top: 45%;
     gap: 50px;
     display: flex;
