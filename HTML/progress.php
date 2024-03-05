@@ -96,11 +96,16 @@
                 $stmt = "SELECT ImgName, Comment From customerimage WHERE AID = $adminID";
                 if($resultc = mysqli_query($conn, $stmt))
                 {
-                    if(mysqli_num_rows($resultc) > 0 )
+                    if( mysqli_num_rows($resultc) > 0 )
                     {
                         $rowc = mysqli_fetch_assoc($resultc);
                         $image = $rowc["ImgName"];
                         $cmnt = $rowc["Comment"];
+                    }
+                    else
+                    {
+                        $image = NULL;
+                        $cmnt = NULL;
                     }
                 }
                 echo "

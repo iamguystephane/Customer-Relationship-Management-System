@@ -94,6 +94,7 @@
             .main-nav-bar a {
                 margin-top: 30%;
             }
+
         </style>
         
         <div class="progress-main-section">
@@ -123,6 +124,11 @@
                                 $rowc = mysqli_fetch_assoc($resultc);
                                 $image = $rowc["ImgName"];
                                 $cmnt = $rowc["Comment"];
+                            }
+                            else
+                            {
+                                $image = NULL;
+                                $cmnt = NULL; 
                             }
                         }
 

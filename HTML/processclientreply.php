@@ -19,38 +19,33 @@ include_once("../PHP/databaseconnect.php");
             move_uploaded_file($imageFileTemp, $upload_image);
         }
         if($comment != '' OR $upload_image != '')
-        {
-            $sqli = "SELECT * FROM customerImage";
+        {   
+            $sqli = "SELECT AID FROM customerImage WHERE AID = $adminID";
             $resulti = mysqli_query($conn,$sqli);
-            while( $row = mysqli_fetch_assoc($resulti) ){
-                $imageColumn = $row["ImgName"];
-                $adminIDColumn = $row["AID"];
-                $commentColumn = $row["Comment"];
-                if($adminIDColumn == $adminID)
-                {
-                    $sql = "UPDATE `customerImage` SET ImgName = '$upload_image' WHERE AID = $adminID";
-                    $result = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($resulti) > 0 )
+            {
+                $row = mysqli_fetch_assoc($resulti);   
+                $sql = "UPDATE `customerImage` SET ImgName = '$upload_image' WHERE AID = $adminID";
+                $result = mysqli_query($conn,$sql);
 
-                    $sqlcomment = "UPDATE `customerImage` SET Comment = '$comment' WHERE AID = $adminID";
-                    $result = mysqli_query($conn,$sqlcomment);
-
-                    header("Location: customerprogress.php");
-                }
-
-                else
-                {
-                    $sql = "INSERT INTO `customerImage` (AID, ImgName, Comment) VALUES ('$adminID', '$upload_image', '$comment')";
-                    $result = mysqli_query($conn, $sql);
-                    if ($result) {
-                        echo "<script> alert('Data inserted successfully') </script>";
-                    }       
-                    else {
-                        die(mysqli_error($conn));
-                    }
+                $sqlcomment = "UPDATE `customerImage` SET Comment = '$comment' WHERE AID = $adminID";
+                $result = mysqli_query($conn,$sqlcomment);
+                echo "<script> alert('Update successful') </script>";
+                header("Location: customerprogress.php");
+            }
+            else
+            {
+                $sql = "INSERT INTO `customerImage` (AID, ImgName, Comment) VALUES ('$adminID', '$upload_image', '$comment')";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    echo "<script> alert('Data inserted successfully') </script>";
+                }       
+                else {
+                    die(mysqli_error($conn));
                 }
             }
         }
+        
     }
     header("Location: customerprogress.php");
-
 ?>
