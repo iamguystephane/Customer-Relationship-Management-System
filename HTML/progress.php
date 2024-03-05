@@ -90,7 +90,7 @@
             include_once("../PHP/databaseconnect.php");
             $sql = "SELECT * FROM `adminImage`";
             $result = mysqli_query($conn, $sql);
-            echo "<div class = 'user-admin' style = 'display: flex; margin-left: 5%;'>";
+            echo "<div class = 'user-admin' style = 'display: flex; margin-left: 8%;'>";
             while ($row = mysqli_fetch_assoc($result)) {
                 $adminID = $row["AID"];
                 $stmt = "SELECT ImgName, Comment From customerimage WHERE AID = $adminID";

@@ -192,7 +192,7 @@
             width: 100%;
             height: 50px;
             padding: 10px;
-            background: black;
+            background: #ff3ea5;
             text-align: center;
             justify-content: center;
             position: fixed;
@@ -200,7 +200,7 @@
         }
 
         .main-nav-bar {
-            background-color: black;
+            background-color: #6420AA;
             width: 13%;
             height: 100vh;
             position: fixed;

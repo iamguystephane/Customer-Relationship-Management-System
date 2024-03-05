@@ -108,7 +108,7 @@
                     include_once("../PHP/databaseconnect.php");
                     $sql = "SELECT * FROM `adminImage`";
                     $result = mysqli_query($conn, $sql);
-                    echo "<div class = '' style = 'display: flex; gap: 125px; flex-wrap: wrap; width: 95%; margin-left: 2%;'>";
+                    echo "<div class = '' style = 'display: flex; gap: 125px; flex-wrap: wrap; width: 98%;'>";
                     while ($row = mysqli_fetch_assoc($result)) {
                         $adminID = $row["AID"];
                         $img = $row["ImgName"];
@@ -133,7 +133,7 @@
                         }
 
                         echo "
-                            <div class = 'adminProgressHero' style = 'margin-left: 2%;'>
+                            <div class = 'adminProgressHero' style = 'margin-left: 5%;'>
                                 <div class = 'progressAdmin'>
                                     <div class = ''><img src = '$img' /></div>
                                     <p class = 'imageTitle' style = 'color: white; font-weight: 550;'>$comment</p>

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Project Team Dashboard </title>
-    <link rel="stylesheet" href="../CSS/general.css">
+    <link rel = "stylesheet" href = "../CSS/general.css">
+    <link rel = "stylesheet" href = "../bootstrap/css/bootstrap.css">
 </head>
 
 <body>
