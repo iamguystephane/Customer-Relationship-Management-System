@@ -8,7 +8,10 @@ body
     height: 100%;
     width: 100%;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.74);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Images/homepage.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
 }
 
 /* nav bar */
@@ -21,7 +24,7 @@ body
     width: 100%;
     height: 50px;
     padding: 10px;
-    background: #ff3ea5;
+    background: #5c0031;
     text-align: center;
     justify-content: center;
     position: fixed;
@@ -38,7 +41,7 @@ body
 }
 .main-nav-bar
 {
-    background-color: #6420AA;
+    background-color: #2a0053;
     width: 13%;
     height: 100vh;
     position: fixed;
@@ -88,6 +91,7 @@ body
     position: relative;
     height: 6vh;
     display: flex;
+    z-index: auto;
 }
 .nav-search-bar
 {
@@ -100,6 +104,7 @@ body
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.616);
     color: white;
+    z-index: auto;
 }
 #notification-bell
 {
@@ -113,7 +118,7 @@ body
 }
 #notification-bell:hover
 {
-    background-color: black;
+    background-color: #6a1ab9;
     border-radius: 50%;
     color: white;
 }
@@ -362,13 +367,36 @@ table, th, td
     margin-top: 20px;
 }
 
-.accept, .decline, .details
+.accept
 {
     margin-left: 10%;
     margin-top: 1%;
     padding: 10px;
-    background-color: white;
-    color: black;
+    background-color: green;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.decline
+{
+    margin-left: 10%;
+    margin-top: 1%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.details
+{
+    margin-left: 10%;
+    margin-top: 1%;
+    padding: 10px;
+    background-color: rgb(145, 145, 42);
+    color: white;
     border: 0;
     cursor: pointer;
     border-radius: 4px;
@@ -390,6 +418,9 @@ table, th, td
     outline: 0px;
     border-radius: 5px;
     width: 350px;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.616);
+    background:rgb(41, 38, 38);
+    color: white;
 }
 .image-comment
 {
@@ -420,6 +451,8 @@ table, th, td
     background-position: center;
     background-size: cover;
 }
+
+
 .image-and-comment
 {
     margin-top: 100px;

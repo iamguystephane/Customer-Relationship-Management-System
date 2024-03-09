@@ -84,9 +84,9 @@
                     <p class = "createdprojectname"> Web Creation </p>
                     <p class = "projectStatus"> Status: Ongoing/completed </p>
                     <p class = "createdprojectactions">
-                        <button type = "submit"> Details </button>
+                        <button type = "submit" class = "details"> Details </button>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type = "submit"> Clear </button>
+                        <button type = "submit" class = "details clear"> Clear </button>
                     </p>
                 </div>
             </div>

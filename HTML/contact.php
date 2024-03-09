@@ -181,6 +181,9 @@
             width: 100%;
             position: relative;
             background-color: rgba(0, 0, 0, 0.74);
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Images/homepage.jpg");
+            background-position: center;
+            background-size: cover;
         }
 
         /* nav bar */
@@ -192,7 +195,7 @@
             width: 100%;
             height: 50px;
             padding: 10px;
-            background: #ff3ea5;
+            background: #5c0031;
             text-align: center;
             justify-content: center;
             position: fixed;
@@ -200,7 +203,7 @@
         }
 
         .main-nav-bar {
-            background-color: #6420AA;
+            background-color: #2a0053;
             width: 13%;
             height: 100vh;
             position: fixed;
@@ -341,10 +344,11 @@
         td {
             margin-left: 15%;
             text-align: center;
-            border: 1px solid black;
+            border: 2px solid black;
             border-collapse: collapse;
             padding: 10px;
             margin-top: 12%;
+            color: white;
         }
 
         table th {

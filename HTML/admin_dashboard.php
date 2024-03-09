@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <title> Project Team Dashboard </title>
     <link rel = "stylesheet" href = "../CSS/general.css">
-    <link rel = "stylesheet" href = "../bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
 </head>
 
 <body>
+    
     <div id="container">
         <div class="nav">
-        <div class="main-nav-bar">
+            <div class="main-nav-bar">
                 <div class = "main-nav-bar-a">
                     <div class = "dashboard" style = "display: flex; gap: 20px;">
                     <i class = "fa fa-dashboard" id = "font-awesome"></i>
@@ -110,6 +112,7 @@
                 <i class="fas fa-arrow-right" id="arrow-completedjob" onclick="completedProjects()"></i>
                 <div class="lowerbox"></div>
             </div>
+            <style>.box{box-shadow :2px 2px 10px 4px rgba(0, 0, 0, 0.5);}</style>
             <div class="box for-customer-requests">
                 
                 <!-- This is the PHP for counting the number of incoming projects in the view requests box -->
@@ -155,9 +158,9 @@
                                     <td> $row[Customer_Name] </td>
                                     <td> $row[Project_Name] </td>
                                     <td>
-                                        <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: black;'> Accept </a> </button>
-                                        <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Decline </a></button>
-                                        <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
+                                        <button type = 'submit' class = 'accept' name = 'accept'>  <a href = 'accept.php?id=$identity' style = 'text-decoration: none; color: white;'> Accept </a> </button>
+                                        <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: white;'> Decline </a></button>
+                                        <button type = 'submit' class = 'details' onclick = 'viewDescription()'> <a href = 'details.php?ID=$identity' style = 'text-decoration: none; color: white;'> Details </a></button>
                                     </td>
                                 </tr>
                             </form> 
@@ -166,7 +169,7 @@
                 }
                 ?>
             </table>
-            <button type="button" class="accept back" onclick="toHomePage()"> Close </button>
+            <button type="button" class="accept back" onclick="toHomePage()" style = "background: red; color: white;"> Close </button>
         </div>
         <!-- This is what happens when you click on uncompleted projects -->
 
@@ -193,8 +196,8 @@
                             <td> $row[Project_Name] </td>
                             <td>
                                 <button type = 'submit' class = 'accept'><a href = 'progress.php'style = 'text-decoration: none; color: black;'> View </a></button>
-                                <button type = 'submit' class = 'accept'> <a href = 'detailsUncompleted.php?ID=$identity' style = 'text-decoration: none; color: black;'> Details </a></button>
-                                <button type = 'submit' class = 'accept'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: black;'> Delete </a></button>
+                                <button type = 'submit' class = 'details'> <a href = 'detailsUncompleted.php?ID=$identity' style = 'text-decoration: none; color: white;'> Details </a></button>
+                                <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: white;'> Delete </a></button>
                             </td>
                         </form>
                     </tr>
@@ -202,16 +205,48 @@
                 }
                 ?>
             </table>
-            <button type="button" class="accept back" onclick="HideUncompletedJob()"> Close </button>
+            <button type="button" class="decline back" onclick="HideUncompletedJob()"> Close </button>
         </div>
 
         <!-- This is what happens when you click on view completed projects -->
+
+        <div class="">
+
+        </div>
+
     </div>
 
-    <style>
 
-    </style>
+    <!-- <div id="pieChartContainer" style="width: 400px; height: 300px; margin-left: 20%; margin-top: -10%; background: none;"></div> -->
+    <!-- @@@ Inserting the pie chart @@@@@@  -->
+    <script>
+    // google.charts.load('current', { 'packages': ['corechart'] });
+    //     google.charts.setOnLoadCallback(drawChart);
 
+    //     function drawChart() {
+    //         // Create a data table with random values
+    //         var data = new google.visualization.DataTable();
+    //         data.addColumn('string', 'Category');
+    //         data.addColumn('number', 'Value');
+            
+    //         // Generate some random data
+    //         var categories = ['Category A', 'Category B', 'Category C'];
+    //         for (var i = 0; i < categories.length; i++) {
+    //             data.addRow([categories[i], Math.random() * 100]);
+    //         }
+
+    //         // Set chart options
+    //         var options = {
+    //             title: 'Random Values Pie Chart'
+    //         };
+
+    //         // Instantiate and draw the chart
+    //         var chart = new google.visualization.PieChart(document.getElementById('pieChartContainer'));
+    //         chart.draw(data, options);
+    //     }
+    </script>
+    
+    
     <script src="../JS/all.js"></script>
     <script src="../JavaScript/general.js" defer></script>
 </body>

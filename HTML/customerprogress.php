@@ -12,6 +12,10 @@
 
 
         <style>
+            body
+            {
+                overflow-x: hidden;
+            }
             #logout {
                 width: 10vw;
                 height: 20vh;
@@ -69,6 +73,34 @@
                     margin-top: 105px;
                 }
             </style>
+             <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            // Get references to elements
+            const popup = document.querySelector('.popupImage');
+            const popupImage = document.querySelector('.popupImage img');
+            const popupClose = document.querySelector('.popupImageClose');
+            
+            // Get references to all images
+            const images = document.querySelectorAll('.adminImage img, .customerimage img');
+
+            // Attach click event to each image
+            images.forEach(function (image) {
+                image.addEventListener('click', function () {
+                    // Set the clicked image source to the popup image source
+                    popupImage.src = this.src;
+
+                    // Display the popup
+                    popup.style.display = 'block';
+                });
+            });
+
+            // Attach click event to close button
+            popupClose.addEventListener('click', function () {
+                // Hide the popup
+                popup.style.display = 'none';
+            });
+        });
+            </script>
             <div class = "header-bar">
                 <div class="secondary-nav">
                 <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM System </span>
@@ -100,15 +132,21 @@
         <div class="progress-main-section">
             <div class="image-comment section1">
                 <div class="search-bar">
-                    <i class="fas fa-search" id="search-icon" style = "left: 49%;"></i>
-                    <input type="text" placeholder="Search" class="nav-search-bar">
+                    <i class="fas fa-search" id="search-icon" style = "left: 57%;"></i>
+                    <input type="text" placeholder="Search" class="nav-search-bar" style = 'margin-left: 8%;'>
                 </div>
                 <div class="image1" style="margin-top: 50px;">
                     <?php
                     include_once("../PHP/databaseconnect.php");
                     $sql = "SELECT * FROM `adminImage`";
                     $result = mysqli_query($conn, $sql);
-                    echo "<div class = '' style = 'display: flex; gap: 125px; flex-wrap: wrap; width: 98%;'>";
+                    echo "
+                        <div class = 'popupImage' >
+                            <span class = 'popupImageClose'> &times; </span>
+                            <img src = '../Images/Edited.jpg' />
+                        </div>
+                    ";
+                    echo "<div class = '' style = 'display: flex; gap: 125px; flex-wrap: wrap; width: 120%; margin-left: 10%;'>";
                     while ($row = mysqli_fetch_assoc($result)) {
                         $adminID = $row["AID"];
                         $img = $row["ImgName"];
@@ -135,7 +173,7 @@
                         echo "
                             <div class = 'adminProgressHero' style = 'margin-left: 5%;'>
                                 <div class = 'progressAdmin'>
-                                    <div class = ''><img src = '$img' /></div>
+                                    <div class = 'adminImage'><img src = '$img' style = 'width: 400px; height: 300px;'></div>
                                     <p class = 'imageTitle' style = 'color: white; font-weight: 550;'>$comment</p>
                                     
                                 </div>
@@ -172,7 +210,7 @@
                         {
                             if($image != "")
                             {
-                                echo "<div class = ''><img src = '$image' /></div>";
+                                echo "<div class = 'customerimage'><img src = '$image' style = 'width: 400px; height: 300px;'></div>";
                             }
                         }
                     ?>
@@ -240,6 +278,65 @@
 
                 .add-image-comment {
                     width: 97%;
+                }
+            </style>
+            <style>
+                img:hover
+                {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+                .popupImage
+                {
+                    position: fixed; 
+                    z-index: 100; 
+                    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+                    height: 100%;
+                    width: 100%;
+                    top: 0px; 
+                    left: 0px;
+                    display: none;
+                }
+                .popupImage img
+                {
+                    transform: scale(1);
+                    width: 800px;
+                    height: 500px;
+                    margin-left:20%;
+                    margin-top: 5%;
+                    border: 5px solid white;
+                    border-radius: 10px;
+                }
+                .popupImageClose
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 70px;
+                    color: white;
+                    cursor: pointer;
+                    font-weight: bolder;
+                }
+                .user-admin {
+                display: flex;
+                flex-wrap: wrap;
+                }
+
+                .flex-item {
+                    flex: 1;
+                    flex-direction: column;
+                    display: block;
+                    margin-top: 2%;;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                img {
+                    width: 500px;
+                    height: 400px;
                 }
             </style>
         </div>

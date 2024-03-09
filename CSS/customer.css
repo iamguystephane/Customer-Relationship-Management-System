@@ -22,7 +22,7 @@ body
     width: 100%;
     height: 50px;
     padding: 10px;
-    background: black;
+    background: #5c0031;
     text-align: center;
     justify-content: center;
     position: fixed;
@@ -30,7 +30,7 @@ body
 }
 .main-nav-bar
 {
-    background-color: black;
+    background-color: #2a0053;
     width: 13%;
     height: 100vh;
     position: fixed;
@@ -103,7 +103,7 @@ body
 }
 #notification-bell:hover
 {
-    background-color: black;
+    background-color: #7329bd;
     border-radius: 50%;
     color: white;
 }
@@ -174,18 +174,23 @@ body
     top: 23%;
     left: 15%;
     padding: 5px;
-    background-color: black;
+    background-color: #6420AA;
     color: white;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
 }
+.newproject:hover
+{
+    background-color: #ff3ea5;
+    color: white;
+}
 .main-section
 {
     position: relative;
-    margin-left: 15%;
+    margin-left: 18%;
     margin-top: 10%;
-    background-color: black;
+    background-color: #3f0423;
     height: 500px;
     width: 1000px;
     text-align: center;
@@ -245,6 +250,7 @@ body
     margin-top: 1%;
     font-weight: bold;
 }
+
 #closeBtn
 {
     position: absolute;
@@ -269,11 +275,12 @@ body
     gap: 50px;
     flex-wrap: wrap;
 }
+
 .createdProject
 {
     width: fit-content;
     height: fit-content;
-    background: black;
+    background: #2a0053;
     color: white;
     border-radius: 5px;
     padding: 20px;
@@ -283,13 +290,18 @@ body
 .createdProject button
 {
     padding: 5px;
-    background: white;
+    background: #ff3ea5;
     border: 0;
-    color: black;
+    color: white;
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10%;
     margin-left: 5%;
+}
+.createdProject button:hover
+{
+    background: #6420AA;
+    
 }
 h3
 {

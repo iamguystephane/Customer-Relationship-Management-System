@@ -204,6 +204,16 @@ class ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'HTTP_Request2' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/http_request2',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -216,8 +226,10 @@ class ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72
         'DateMalformedStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedStringException.php',
         'DateObjectError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateObjectError.php',
         'DateRangeError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateRangeError.php',
+        'Net_URL2' => __DIR__ . '/..' . '/pear/net_url2/Net/URL2.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
+        'PEAR_Exception' => __DIR__ . '/..' . '/pear/pear_exception/PEAR/Exception.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
@@ -231,6 +243,7 @@ class ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitb1d700c4614c24013a24f9dbb524ef72::$classMap;
 
         }, null, ClassLoader::class);

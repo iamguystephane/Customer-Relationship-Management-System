@@ -84,15 +84,57 @@
                         </div>
                     </div>
                 </form>
-
+                    
         </div>
+
+        <!-- @@@@ script for the popupImage @@@@ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to elements
+            const popup = document.querySelector('.popupImage');
+            const popupImage = document.querySelector('.popupImage img');
+            const popupClose = document.querySelector('.popupImageClose');
+            
+            // Get references to all images
+            const images = document.querySelectorAll('.adminImage img, .customerImage img');
+
+            // Attach click event to each image
+            images.forEach(function (image) {
+                image.addEventListener('click', function () {
+                    // Set the clicked image source to the popup image source
+                    popupImage.src = this.src;
+
+                    // Display the popup
+                    popup.style.display = 'block';
+                });
+            });
+
+            // Attach click event to close button
+            popupClose.addEventListener('click', function () {
+                // Hide the popup
+                popup.style.display = 'none';
+            });
+        });
+    </script>
+
             <?php
             include_once("../PHP/databaseconnect.php");
             $sql = "SELECT * FROM `adminImage`";
             $result = mysqli_query($conn, $sql);
-            echo "<div class = 'user-admin' style = 'display: flex; margin-left: 8%;'>";
+            echo "<div class = 'user-admin' style = 'display: flex; margin-left: 10%; margin-top: 5%;'>";
+
+            // Popup Image 
+            echo "
+                <div class = 'popupImage' >
+                    <span class = 'popupImageClose'> &times; </span>
+                    <img src = '../Images/Edited.jpg' />
+                </div>
+            ";
+            $rowc = null;
             while ($row = mysqli_fetch_assoc($result)) {
+                $adminImage = $row["ImgName"];
                 $adminID = $row["AID"];
+                $adminComment = $row["Comment"];
                 $stmt = "SELECT ImgName, Comment From customerimage WHERE AID = $adminID";
                 if($resultc = mysqli_query($conn, $stmt))
                 {
@@ -109,58 +151,107 @@
                     }
                 }
                 echo "
-                <div class = 'adminProgressHero flex-item'>
-                    <div class = ''><img src = '{$row['ImgName']}' /></div>
-                    <p style = 'text-decoration: wrap; color: white; font-weight: 600;' class = 'imageTitle'>{$row['Comment']}</p>
+                <div class = 'adminProgressHero flex-item' style = 'margin-top: -2%;'>
+                    <div class = 'adminImage'><img src = '$adminImage' style = 'width: 400px; height: 300px;' /></div>
+                    <p style = 'text-decoration: wrap; color: white; font-weight: 600;' class = 'imageTitle'> $adminComment </p>
 
                     <br><br><br><br><br><br>
                 </div>
-                <div class = 'userProgressHero' style = 'margin-right: 4%; margin-top: 2%;'>
+                <div class = 'userProgressHero' style = 'margin-right: 12%; margin-top: -2%;'>
                 ";
                     showimage($image);
-
-                echo "
+                    
+                    if($rowc != NULL)
+                    {
+                        echo "
 
                     <p style = 'text-decoration: wrap; color: white; font-weight: 600;' class = 'imageTitle'>{$rowc['Comment']}</p>
                 </div>
+
                 ";
+                    }
+
+
+                // script for popup image 
+                
+
                 $image = NULL;
                 $cmnt = NULL;
+
             }
             echo "</div>";
+            
             function showimage($image)
             {
                 if($image != "")
                 {
-                    echo "<div class = ''><img src = '$image' /></div>";
+                    echo "<div class = 'customerImage'><img src = '$image' / style = 'width: 400px; height: 300px;'></div>";
                 }
             }
+
             ?>
 
-        </div>
-        <style>
-            .user-admin {
+            <style>
+                img:hover
+                {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+                .popupImage
+                {
+                    position: fixed; 
+                    z-index: 100; 
+                    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+                    height: 100%;
+                    width: 100%;
+                    top: 0px; 
+                    left: 0px;
+                    display: none;
+                }
+                .popupImage img
+                {
+                    transform: scale(1);
+                    width: 800px;
+                    height: 500px;
+                    margin-left:20%;
+                    margin-top: 5%;
+                    border: 5px solid white;
+                    border-radius: 10px;
+                }
+                .popupImageClose
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 70px;
+                    color: white;
+                    cursor: pointer;
+                    font-weight: bolder;
+                }
+                .user-admin {
                 display: flex;
                 flex-wrap: wrap;
-            }
+                }
 
-            .flex-item {
-                flex: 1;
-                flex-direction: column;
-                display: block;
-                margin-top: 2%;;
-            }
+                .flex-item {
+                    flex: 1;
+                    flex-direction: column;
+                    display: block;
+                    margin-top: 2%;;
+                }
 
-            a {
-                text-decoration: none;
-                color: white;
-            }
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
 
-            img {
-                width: 500px;
-                height: 400px;
-            }
-        </style>
+                img {
+                    width: 500px;
+                    height: 400px;
+                }
+            </style>
+
+        </div>
 
         <?php
         include_once("../PHP/databaseconnect.php");
@@ -188,6 +279,7 @@
         ?>
         <button type='submit' class='decline finish-project-btn' name='submitproject' style='margin-left: 15%;'> Finish
         </button>
+
         <script src="../JS/all.js"></script>
         <script src="../JavaScript/general.js" defer></script>
 </body>
