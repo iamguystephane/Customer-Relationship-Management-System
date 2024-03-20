@@ -9,6 +9,10 @@ body
     width: 100%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.74);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Images/homepage.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
 }
 
 /* nav bar */
@@ -188,51 +192,30 @@ body
 .main-section
 {
     position: relative;
-    margin-left: 18%;
+    margin-left: 32%;
     margin-top: 10%;
-    background-color: #3f0423;
-    height: 500px;
-    width: 1000px;
+    background-color: silver;
+    height: 540px;
+    width: 500px;
     text-align: center;
+    padding: 10px;
     display: none;
 }
 
-.main-section h2
-{
-    color: white;
-}
 .main-section input
 {
-    padding: 5px;
-    border-radius: 5px;
-    width: 50%;
-    outline: 0px;
+    padding: 10px;
+    width: 80%;
     margin-top: 5%;
-    border-radius: 7px;
+    outline-color: rgb(8, 152, 248);
 }
 .main-section textarea
 {
     margin-top: 5%;
-    outline: 0;
-    border-radius: 14px;
     padding: 10px;
+    outline-color: rgb(8, 152, 248);
 }
-.textareaspan
-{
-    position: absolute;
-    left: 15%;
-    bottom: 55%;
-    font-weight: 600;
-    color: white;
-}
-.inputspan
-{
-    position: absolute;
-    left: 25%;
-    top: 11%;
-    font-weight: 600;
-    color: white;
-}
+
 .project-name
 {
     top: 27%;
@@ -240,15 +223,19 @@ body
 .main-section button
 {
     padding: 5px;
-    background-color: white;
-    color: black;
+    background-color: #5c0031;
+    color: white;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
     float: right;
-    margin-right: 12%;
+    margin-right: 9%;
     margin-top: 1%;
     font-weight: bold;
+}
+.main-section button:hover
+{
+    background-color: #ff3ea5
 }
 
 #closeBtn
@@ -259,14 +246,12 @@ body
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    color: white;
-    background: none;
+    color: #2a0053;
 }
 #closeBtn:hover
 {
-    color: red;
-    background-color: white;
     cursor: pointer;
+    color:#7329bd;
 }
 .project-history
 {

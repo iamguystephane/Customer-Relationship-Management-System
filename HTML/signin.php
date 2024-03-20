@@ -32,16 +32,12 @@
             $Password = $_POST["password"];
 
             // checking if the username is found in the database
-            $usernameCheck = "SELECT * FROM `login` where Username = '$Name'";
+            $usernameCheck = "SELECT * FROM `login` where Username = '$Name' AND Password = '$Password'";
             $resultName = mysqli_query($conn, $usernameCheck);
-
-            // checking if the password is found in the database
-            $passwordCheck = "SELECT * FROM `login` where Password = '$Password'";
-            $resultPass = mysqli_query($conn, $passwordCheck);
 
             // this if condition checks if the username and the password have been found or not and then performs the instructions given
 
-            if ($nameCheck = mysqli_fetch_assoc($resultName) and $pwdCheck = mysqli_fetch_assoc($resultPass))
+            if ($nameCheck = mysqli_fetch_assoc($resultName))
             {
                 $userStatus = $nameCheck['Status'];
                 if($userStatus === 'admin')
@@ -53,7 +49,7 @@
                 elseif($userStatus === 'user')
                 {
                     echo "<script> alert('Login Successful') </script> ";
-                    header("location: customerdashboard.php");
+                    header("location: createproject.php");
                     exit();
                 }
                 else

@@ -50,7 +50,7 @@
                         <i class="fas fa-bell" id="notification-bell"></i>
                     </div>
                     <div class="user">
-                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator </span>
+                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Project Team </span>
                         <a href = "signin.php"><i class="fa-solid fa-power-off" id = "power-icon" onclick="Logout()"></i></a>
                     </div>
                 </div>
@@ -88,34 +88,7 @@
         </div>
 
         <!-- @@@@ script for the popupImage @@@@ -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get references to elements
-            const popup = document.querySelector('.popupImage');
-            const popupImage = document.querySelector('.popupImage img');
-            const popupClose = document.querySelector('.popupImageClose');
-            
-            // Get references to all images
-            const images = document.querySelectorAll('.adminImage img, .customerImage img');
-
-            // Attach click event to each image
-            images.forEach(function (image) {
-                image.addEventListener('click', function () {
-                    // Set the clicked image source to the popup image source
-                    popupImage.src = this.src;
-
-                    // Display the popup
-                    popup.style.display = 'block';
-                });
-            });
-
-            // Attach click event to close button
-            popupClose.addEventListener('click', function () {
-                // Hide the popup
-                popup.style.display = 'none';
-            });
-        });
-    </script>
+    
 
             <?php
             include_once("../PHP/databaseconnect.php");
@@ -165,20 +138,16 @@
                     {
                         echo "
 
-                    <p style = 'text-decoration: wrap; color: white; font-weight: 600;' class = 'imageTitle'>{$rowc['Comment']}</p>
+                    <p style = 'text-decoration: wrap; width: 80%; color: white; font-weight: 600;' class = 'imageTitle'>{$rowc['Comment']}</p>
                 </div>
 
                 ";
-                    }
-
-
-                // script for popup image 
-                
-
+               
                 $image = NULL;
                 $cmnt = NULL;
 
             }
+        }
             echo "</div>";
             
             function showimage($image)
@@ -188,9 +157,7 @@
                     echo "<div class = 'customerImage'><img src = '$image' / style = 'width: 400px; height: 300px;'></div>";
                 }
             }
-
             ?>
-
             <style>
                 img:hover
                 {
@@ -277,9 +244,47 @@
             }
         }
         ?>
-        <button type='submit' class='decline finish-project-btn' name='submitproject' style='margin-left: 15%;'> Finish
-        </button>
 
+        <?php
+            include_once("../PHP/databaseconnect.php");
+            $sql = "SELECT * FROM create_project";
+            $result = mysqli_query($conn, $sql);
+            if($result)
+            {
+                $row = mysqli_fetch_assoc($result);
+                $id = $row["ID"];
+            }
+            echo " <button type = 'submit' class = 'decline finish-project-btn' name = 'submitproject' style = 'margin-left: 15%;'><a href = 'finish.php?id=$id'> Finish </a></button> ";
+
+        ?>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to elements
+            const popup = document.querySelector('.popupImage');
+            const popupImage = document.querySelector('.popupImage img');
+            const popupClose = document.querySelector('.popupImageClose');
+            
+            // Get references to all images
+            const images = document.querySelectorAll('.adminImage img, .customerImage img');
+
+            // Attach click event to each image
+            images.forEach(function (image) {
+                image.addEventListener('click', function () {
+                    // Set the clicked image source to the popup image source
+                    popupImage.src = this.src;
+
+                    // Display the popup
+                    popup.style.display = 'block';
+                });
+            });
+
+            // Attach click event to close button
+            popupClose.addEventListener('click', function () {
+                // Hide the popup
+                popup.style.display = 'none';
+            });
+        });
+        </script>
         <script src="../JS/all.js"></script>
         <script src="../JavaScript/general.js" defer></script>
 </body>

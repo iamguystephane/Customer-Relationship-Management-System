@@ -117,5 +117,4 @@ document.querySelector('#myForm').addEventListener('submit', function(event)
     }
  });
 
-//  logout
-//Note that if the javaScript code below this comment doesn't apply, just comment the above code to make it applicable
+// Script for popup image section in progress

@@ -103,7 +103,8 @@
             </script>
             <div class = "header-bar">
                 <div class="secondary-nav">
-                <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM System </span>
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM </span> 
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> System </span>
                     <style>
                         .notification-icon
                         {
@@ -112,7 +113,54 @@
                     </style>
                     <div class="notification-icon">
                         <i class="fas fa-bell" id="notification-bell"></i>
+                    </div>  
+
+                    <div style="display: flex; gap: 30px; margin-left: 43%; width: 18%; margin-top: -5px; height: 100%;">
+                    
+                        <div class = "policy" style = "margin-top: 8px;">
+                            <a href = ""> Policy </a>
+                        </div>
+                        <div class = "contact" style = "width: 100vw;">
+                            <a href = ""> Contact Us </a>
+                        </div>
                     </div>
+                    <style>
+                        marquee
+                        {
+                            margin-right: -40%;
+                            margin-left: 10%;
+                            color: white;
+                            font-size: 30px;
+                            font-weight: bolder;
+                        }
+                        .contact a, .policy a
+                        {
+                            font-size: 20px;
+                            margin-bottom: 20px;
+                            text-decoration: none;
+                            height: 10px;
+                            color: lightgrey;
+                        }                        
+                        .policy a:hover
+                        {
+                            color: white;   
+  
+                        }
+                        .contact a:hover
+                        {
+                            color: white;
+                            
+                        }
+                        .notification-icon
+                        {
+                            margin-left: 70px;
+                        }
+                        #notification-bell
+                        {
+                            margin-left: 0px;
+                        }
+                    </style>
+
                     <div class="user">
                         <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator </span>
                         <a href = "signin.php"><i class="fa-solid fa-power-off" id = "power-icon" onclick="Logout()"></i></a>
@@ -121,7 +169,10 @@
             </div>
             
         </div>
-
+        <div class="search-bar" style = "margin-top: 8%;">
+            <i class="fas fa-search" id="search-icon" style = "left: 52%;"></i>
+            <input type="text" placeholder="Search" class="nav-search-bar" style = 'margin-left: 8%;'>
+        </div>
         <style>
             .main-nav-bar a {
                 margin-top: 30%;
@@ -131,10 +182,6 @@
         
         <div class="progress-main-section">
             <div class="image-comment section1">
-                <div class="search-bar">
-                    <i class="fas fa-search" id="search-icon" style = "left: 57%;"></i>
-                    <input type="text" placeholder="Search" class="nav-search-bar" style = 'margin-left: 8%;'>
-                </div>
                 <div class="image1" style="margin-top: 50px;">
                     <?php
                     include_once("../PHP/databaseconnect.php");
@@ -171,19 +218,19 @@
                         }
 
                         echo "
-                            <div class = 'adminProgressHero' style = 'margin-left: 5%;'>
+                            <div class = 'adminProgressHero' style = 'margin-left: 5%; margin-top: -5%;'>
                                 <div class = 'progressAdmin'>
                                     <div class = 'adminImage'><img src = '$img' style = 'width: 400px; height: 300px;'></div>
                                     <p class = 'imageTitle' style = 'color: white; font-weight: 550;'>$comment</p>
                                     
                                 </div>
                             </div>
-                            <div class = 'userProgressHero'>
+                            <div class = 'userProgressHero' style = 'margin-top: -5%;'>
                         ";
                         
                             showimage($image);
                         echo "
-                            <p class = 'imageTitle' style = 'color: white; font-weight: 550;'>$cmnt</p>
+                            <p class = 'imageTitle' style = 'color: white; width: 80%; font-weight: 550;'>$cmnt</p>
 
                             <form action = 'processclientreply.php' method = 'POST' enctype = 'multipart/form-data' style = 'margin-top: 5%;'>
                                 <p class='image-comment-goes-here'>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Create Account </title>
+    <title> Project Team Create Account </title>
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
     <form action = "" method = "POST" id = "myform">
         <div id = "container">
             <div class = "hero">
-                <h2> Admin registration </h2>
+                <h2> Project Team registration </h2>
                 <div class = "name">
                     <label for = "name" class = label-name> Username </label>
                     <p><input type = "text" name = "name" required autocomplete></p>

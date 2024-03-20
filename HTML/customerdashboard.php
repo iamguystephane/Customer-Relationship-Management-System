@@ -38,7 +38,8 @@
             </style>
             <div class = "header-bar">
                 <div class="secondary-nav">
-                <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM System </span>
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM </span> 
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> System </span>
                     <style>
                         .notification-icon
                         {
@@ -48,6 +49,54 @@
                     <div class="notification-icon">
                         <i class="fas fa-bell" id="notification-bell"></i>
                     </div>
+                    <marquee direction = "left"> Welcome to Vitna Media's CRM System </marquee>    
+
+                    <div style="display: flex; gap: 30px; margin-left: 43%; width: 18%; margin-top: -5px; height: 100%;">
+                    
+                        <div class = "policy" style = "margin-top: 8px;">
+                            <a href = ""> Policy </a>
+                        </div>
+                        <div class = "contact" style = "width: 100vw;">
+                            <a href = ""> Contact Us </a>
+                        </div>
+                    </div>
+                    <style>
+                        marquee
+                        {
+                            margin-right: -40%;
+                            margin-left: 10%;
+                            color: white;
+                            font-size: 30px;
+                            font-weight: bolder;
+                        }
+                        .contact a, .policy a
+                        {
+                            font-size: 20px;
+                            margin-bottom: 20px;
+                            text-decoration: none;
+                            height: 10px;
+                            color: lightgrey;
+                        }                        
+                        .policy a:hover
+                        {
+                            color: white;   
+  
+                        }
+                        .contact a:hover
+                        {
+                            color: white;
+                            
+                        }
+                        .notification-icon
+                        {
+                            margin-left: 70px;
+                        }
+                        #notification-bell
+                        {
+                            margin-left: 0px;
+                        }
+                    </style>
+
                     <div class="user">
                         <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator </span>
                         <a href = "signin.php"><i class="fa-solid fa-power-off" id = "power-icon" onclick="Logout()"></i></a>

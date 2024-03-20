@@ -58,7 +58,7 @@
                     <h4 class='project-description'>Project Description</h4>
                     <p>{$row['Project_Description']}</p>
                     <p style='display: flex; gap: 20px; justify-content: center;'>
-                        <button type='button' class='back-btn' onclick='HideDescription()' style='background: red;'><a href='admin_dashboard.php'>Back</a></button>
+                        <button type='button' class='back-btn' onclick='HideDescription()' style='background: red;'><a href='decline.php?IDD=$identity'>Decline</a></button>
                         <button type='button' class='back-btn accept' onclick='HideDescription()' style='background: green;'><a href='accept.php?id=$identity'>Accept</a></button>
                     </p>
                 ";

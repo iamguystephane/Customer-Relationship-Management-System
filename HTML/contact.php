@@ -60,7 +60,7 @@
                         <i class="fas fa-bell" id="notification-bell"></i>
                     </div>
                     <div class="user">
-                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator
+                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Project Team
                         </span>
                         <a href="signin.php"><i class="fa-solid fa-power-off" id="power-icon"
                                 onclick="Logout()"></i></a>
@@ -268,15 +268,15 @@
         #notification-bell {
             width: 25px;
             height: 25px;
-            margin-left: 200px;
-            margin-top: 5px;
+            margin-top: -5px;
+            margin-left: 100px;
             cursor: pointer;
             padding: 5px;
             color: white;
         }
 
         #notification-bell:hover {
-            background-color: black;
+            background-color: #6a1ab9;
             border-radius: 50%;
             color: white;
         }

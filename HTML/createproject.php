@@ -39,7 +39,8 @@
             </style>
             <div class = "header-bar">
                 <div class="secondary-nav">
-                <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM System </span>
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM </span> 
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> System </span>
                     <style>
                         .notification-icon
                         {
@@ -48,7 +49,54 @@
                     </style>
                     <div class="notification-icon">
                         <i class="fas fa-bell" id="notification-bell"></i>
+                    </div>   
+
+                    <div style="display: flex; gap: 30px; margin-left: 43%; width: 18%; margin-top: -5px; height: 100%;">
+                    
+                        <div class = "policy" style = "margin-top: 8px;">
+                            <a href = ""> Policy </a>
+                        </div>
+                        <div class = "contact" style = "width: 100vw;">
+                            <a href = ""> Contact Us </a>
+                        </div>
                     </div>
+                    <style>
+                        marquee
+                        {
+                            margin-right: -40%;
+                            margin-left: 10%;
+                            color: white;
+                            font-size: 30px;
+                            font-weight: bolder;
+                        }
+                        .contact a, .policy a
+                        {
+                            font-size: 20px;
+                            margin-bottom: 20px;
+                            text-decoration: none;
+                            height: 10px;
+                            color: lightgrey;
+                        }                        
+                        .policy a:hover
+                        {
+                            color: white;   
+  
+                        }
+                        .contact a:hover
+                        {
+                            color: white;
+                            
+                        }
+                        .notification-icon
+                        {
+                            margin-left: 70px;
+                        }
+                        #notification-bell
+                        {
+                            margin-left: 0px;
+                        }
+                    </style>
+
                     <div class="user">
                         <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator </span>
                         <a href = "signin.php"><i class="fa-solid fa-power-off" id = "power-icon" onclick="Logout()"></i></a>
@@ -60,21 +108,18 @@
             <button type = "" class = "newproject" onclick = "newProject()"> New Project </button>
             <div class = "main-section">
                 <form action = "" method = "post">
-                    <h2> Create a project </h2>
+                    <h2 style = "color: #2a0053"> Create a project </h2>
                     <div class = "name-username">
-                        <span class = inputspan> Your Name </span>
-                        <input type = "text" class = "username" name = "username" required>
+                        <input type = "text" class = "username" name = "username" placeholder = "name" required>
                     </div>
                     <div class = "name-projectname">
                         <i class = "fa fa-close" aria-hidden = "true" id = "closeBtn" onclick = "closeCreateProject()"></i>
-                        <span class = "inputspan project-name"> Project name </span>
-                        <input type = "text" class = "projectname" name = "nameOfProject" required>
+                        <input type = "text" class = "projectname" name = "nameOfProject" placeholder = "project title" required>
                     </div>
                     <div class = "projectdescription">
-                        <span class = "textareaspan"> Project Description </span>
-                        <textarea id = "describeproject" cols = "100" rows = "13" name = "project_description" required placeholder = "Please describe fully what your business is all about inorder to better understand your needs and provide you with quality service"></textarea>
+                        <textarea id = "describeproject" cols = "50" rows = "20" name = "project_description" required placeholder = "Please describe fully what your business is all about inorder to better understand your needs and provide you with quality service"></textarea>
                     </div>
-                    <button type = "submit" class = "submitproject" name = "submitproject"> Submit request </button>
+                    <button type = "submit" class = "submitproject" name = "submitproject"> Submit </button>
                 </form>
             </div>
             <h3 style = 'margin-top: 15%;'> Project History </h3>

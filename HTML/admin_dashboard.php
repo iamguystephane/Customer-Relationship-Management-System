@@ -41,27 +41,34 @@
 
             <div class="header-bar">
                 <div class="secondary-nav">
-                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM System </span>
+                    <span class = "logo" style = "color: white; text-transform: uppercase; font-size: 20px;"> CRM system</span> 
+                   
+                    <div class="notification-icon">
+                        <i class="fas fa-bell" id="notification-bell"></i>
+                    </div>
+                    
+                    
                     <style>
+                       
                         .notification-icon
                         {
                             margin-left: -65%;
                         }
                     </style>
-                    <div class="notification-icon">
-                        <i class="fas fa-bell" id="notification-bell"></i>
-                    </div>
+
                     <div class="user">
-                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Administrator
+                        <i class="fa-solid fa-user" id="user-icon"></i><span class="administrator"> Project Team
                         </span>
                         <a href="signin.php"><i class="fa-solid fa-power-off" id="power-icon"
                         onclick="Logout()"></i></a>
                     </div>
                 </div>
+                
                 <div class="search-bar" style="margin-top: 3%; margin-left: 32%;">
                     <i class="fas fa-search" id="search-icon"></i>
                     <input type="text" placeholder="Search" class="nav-search-bar">
                 </div>
+                
             </div>
         </div>
 
@@ -216,36 +223,6 @@
 
     </div>
 
-
-    <!-- <div id="pieChartContainer" style="width: 400px; height: 300px; margin-left: 20%; margin-top: -10%; background: none;"></div> -->
-    <!-- @@@ Inserting the pie chart @@@@@@  -->
-    <script>
-    // google.charts.load('current', { 'packages': ['corechart'] });
-    //     google.charts.setOnLoadCallback(drawChart);
-
-    //     function drawChart() {
-    //         // Create a data table with random values
-    //         var data = new google.visualization.DataTable();
-    //         data.addColumn('string', 'Category');
-    //         data.addColumn('number', 'Value');
-            
-    //         // Generate some random data
-    //         var categories = ['Category A', 'Category B', 'Category C'];
-    //         for (var i = 0; i < categories.length; i++) {
-    //             data.addRow([categories[i], Math.random() * 100]);
-    //         }
-
-    //         // Set chart options
-    //         var options = {
-    //             title: 'Random Values Pie Chart'
-    //         };
-
-    //         // Instantiate and draw the chart
-    //         var chart = new google.visualization.PieChart(document.getElementById('pieChartContainer'));
-    //         chart.draw(data, options);
-    //     }
-    </script>
-    
     
     <script src="../JS/all.js"></script>
     <script src="../JavaScript/general.js" defer></script>

@@ -30,6 +30,8 @@ body
     position: fixed;
     z-index: 1;
 }
+
+
 .line-dashboard
 {
     height: 1px;
@@ -106,12 +108,13 @@ body
     color: white;
     z-index: auto;
 }
+
 #notification-bell
 {
     width: 25px;
     height: 25px;
-    margin-left: 200px;
-    margin-top: 5px;
+    margin-top: -5px;
+    margin-left: 100px;
     cursor: pointer;
     padding: 5px;
     color: white;
@@ -165,7 +168,10 @@ body
     font-weight: bold;
     color: white;
     margin-top: 4px;
+    width: 10vw;
 }
+
+
 
 #user-icon
 {
