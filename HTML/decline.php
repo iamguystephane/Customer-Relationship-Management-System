@@ -2,11 +2,11 @@
 
     // @@@@ Importing api classes for infobit @@@@
 
-    use infobip\Configuration;
-    use infobip\Api\SmsApi;
-    use infobip\Model\SmsDestination;
-    use infobip\model\SmsTextualMessage;
-    use infobip\Model\SmsAdvancedTextualRequest;
+    use Infobip\Configuration;
+    use Infobip\Api\SmsApi;
+    use Infobip\Model\SmsDestination;
+    use Infobip\model\SmsTextualMessage;
+    use Infobip\Model\SmsAdvancedTextualRequest;
 
     require __DIR__ . "/../vendor/autoload.php";
 
@@ -29,12 +29,13 @@
         $message = new SmsTextualMessage
         (
             destinations: [$destination], 
-            text: "Your project has been declined. Unfortunately, we donot offer such services at this time"
+            text: "Your project has been declined. Unfortunately, we donot offer such services at this time",
+            from: "VITNACRM"
         );
         $request = new SmsAdvancedTextualRequest(messages: [$message]);
         $response = $api->sendSmsMessage($request);
 
-        echo "<script> alert('Customer has been notified via SMS') </script>";
+        header("Location: admin_dashboard.php");
 
     }
 ?>

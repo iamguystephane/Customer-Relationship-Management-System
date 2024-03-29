@@ -1,11 +1,11 @@
 <?php
     // @@@@ Importing api classes for infobit @@@@
 
-    use infobip\Configuration;
-    use infobip\Api\SmsApi;
-    use infobip\Model\SmsDestination;
-    use infobip\model\SmsTextualMessage;
-    use infobip\Model\SmsAdvancedTextualRequest;
+    use Infobip\Configuration;
+    use Infobip\Api\SmsApi;
+    use Infobip\Model\SmsDestination;
+    use Infobip\model\SmsTextualMessage;
+    use Infobip\Model\SmsAdvancedTextualRequest;
 
     require __DIR__ . "/../vendor/autoload.php";
 
@@ -15,8 +15,6 @@
         $id = $_GET["id"];
         $sql = "UPDATE `create_project` SET Status = 'Accept' where ID = $id";
         $result = mysqli_query($conn,$sql);
-        // header("location: admin_dashboard.php");
-        echo "<script> alert('Project has been accepted') </script>";
 
         // @@ Infobip api implementation @@ 
 
@@ -29,13 +27,14 @@
         $message = new SmsTextualMessage
         (
             destinations: [$destination], 
-            text: "Your project has been accepted. Please be sure to regularly check your project progress"
+            text: "Your project has been accepted",
+            from: "VITNACRM"
         );
         $request = new SmsAdvancedTextualRequest(messages: [$message]);
         $response = $api->sendSmsMessage($request);
 
         echo "<script> alert('Customer has been notified via SMS') </script>";
-
+        header("Location: admin_dashboard.php");
     }
     
 ?>

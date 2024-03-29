@@ -204,7 +204,7 @@
                             <td>
                                 <button type = 'submit' class = 'accept'><a href = 'progress.php'style = 'text-decoration: none; color: black;'> View </a></button>
                                 <button type = 'submit' class = 'details'> <a href = 'detailsUncompleted.php?ID=$identity' style = 'text-decoration: none; color: white;'> Details </a></button>
-                                <button type = 'submit' class = 'decline'><a href = 'decline.php?IDD=$identity' style = 'text-decoration: none; color: white;'> Delete </a></button>
+                                <button type = 'submit' class = 'decline'><a href = 'delete.php?IDD=$identity' style = 'text-decoration: none; color: white;'> Delete </a></button>
                             </td>
                         </form>
                     </tr>
